@@ -3591,6 +3591,7 @@ __metadata:
     axios: ^0.27.2
     eslint: ^8.5.0
     eslint-plugin-vue: ^8.2.0
+    jose: ^4.8.1
     jsdom: ^19.0.0
     pinia: ^2.0.13
     prettier: ^2.5.1
@@ -6740,6 +6741,13 @@ __metadata:
     "@sideway/formula": ^3.0.0
     "@sideway/pinpoint": ^2.0.0
   checksum: eaf62f6c02f2edb1042f1ab04fc23a5918a2cb8f54bec84c6e1033624d8a462c10ae9518af55a3ba84f1793960450d58094eda308e7ef93c17edd4e3c8ef31d5
+  languageName: node
+  linkType: hard
+
+"jose@npm:^4.8.1":
+  version: 4.8.1
+  resolution: "jose@npm:4.8.1"
+  checksum: c3e239ccbb07863c28250aedea3e734e4a3b26abc1cbf6acf333381db5ef31e5d1eeced791299076f13b24f41b4b463a7a1e4eaa0079ae0febf9bfd60acb555a
   languageName: node
   linkType: hard
 

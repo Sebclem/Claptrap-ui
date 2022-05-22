@@ -7,18 +7,19 @@
 </template>
 
 <script setup lang="ts">
-import axios from "axios";
-import { useRoute } from "vue-router";
-
-const baseApi = import.meta.env.VITE_API_BASE_URL;
-const baseUrl = window.location.origin;
+import { useUserStore } from "@/stores/user";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
-
-axios.post(baseApi + "login/discord", {
-  redirectUri: baseUrl + "/oauth2/callback",
-  code: route.query.code,
-});
+const router = useRouter();
+const userStore = useUserStore();
+if (route.query.code) {
+  userStore.login(route.query.code as string).then(() => {
+    router.push("/");
+  });
+} else {
+  router.push({ name: "oauth-redirect" });
+}
 </script>
 
 <style scoped></style>
