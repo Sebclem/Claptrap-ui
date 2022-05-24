@@ -1,7 +1,12 @@
 <template>
   <v-row>
     <v-col class="d-flex justify-center align-center mt-16">
-      <v-progress-circular size="200" width="17" color="yellow" indeterminate></v-progress-circular>
+      <v-progress-circular
+        size="200"
+        width="17"
+        color="yellow"
+        indeterminate
+      ></v-progress-circular>
     </v-col>
   </v-row>
 </template>

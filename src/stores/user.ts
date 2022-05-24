@@ -1,11 +1,14 @@
 import { defineStore } from "pinia";
 import * as jose from "jose";
 import axios from "axios";
+import { cookiesStorage } from "./coockiesStorage";
 
 export const useUserStore = defineStore("user", {
   state: () => ({
     userName: "",
     discordId: "",
+    discriminator: "",
+    avatar: "",
     token: "",
     loginFail: false,
   }),
@@ -24,6 +27,7 @@ export const useUserStore = defineStore("user", {
       return true;
     },
     getTokenPayload: (state) => {
+      const token = state.token;
       return jose.decodeJwt(state.token);
     },
   },
@@ -39,18 +43,16 @@ export const useUserStore = defineStore("user", {
 
         this.token = response.data.token;
         const payload = this.getTokenPayload;
-        if (payload.sub) {
-          this.userName = payload.sub;
-        }
-        if (payload.discord_id) {
-          this.discordId = payload.discord_id as string;
-        }
+
+        this.userName = payload.sub as string;
+        this.discordId = payload.discord_id as string;
+        this.discriminator = payload.discriminator as string;
+        this.avatar = payload.avatar as string;
 
         this.loginFail = false;
         console.log("Loggin success !");
         return true;
       } catch (reason) {
-
         console.log("Loggin fail !");
         console.log(reason);
         this.token = "";
@@ -60,5 +62,8 @@ export const useUserStore = defineStore("user", {
         return false;
       }
     },
+  },
+  persist: {
+    storage: cookiesStorage,
   },
 });

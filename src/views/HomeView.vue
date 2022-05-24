@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useUserStore } from '@/stores/user';
-import { storeToRefs } from 'pinia';
+import { useUserStore } from "@/stores/user";
+import { storeToRefs } from "pinia";
 
 const userStore = useUserStore();
 const { loginFail } = storeToRefs(userStore);
