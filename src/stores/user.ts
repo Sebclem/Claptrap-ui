@@ -31,38 +31,7 @@ export const useUserStore = defineStore("user", {
       return jose.decodeJwt(state.token);
     },
   },
-  actions: {
-    async login(code: string) {
-      const baseApi = import.meta.env.VITE_API_BASE_URL;
-      const baseUrl = window.location.origin;
-      try {
-        const response = await axios.post(baseApi + "auth/discord", {
-          redirectUri: baseUrl + "/oauth2/callback",
-          code: code,
-        });
-
-        this.token = response.data.token;
-        const payload = this.getTokenPayload;
-
-        this.userName = payload.sub as string;
-        this.discordId = payload.discord_id as string;
-        this.discriminator = payload.discriminator as string;
-        this.avatar = payload.avatar as string;
-
-        this.loginFail = false;
-        console.log("Loggin success !");
-        return true;
-      } catch (reason) {
-        console.log("Loggin fail !");
-        console.log(reason);
-        this.token = "";
-        this.userName = "";
-        this.discordId = "";
-        this.loginFail = true;
-        return false;
-      }
-    },
-  },
+  actions: {},
   persist: {
     storage: cookiesStorage,
   },
