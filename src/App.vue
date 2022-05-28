@@ -3,7 +3,11 @@
     <header-component />
     <v-main>
       <v-container>
-        <router-view />
+        <router-view v-slot="{ Component }">
+          <v-fade-transition>
+            <component :is="Component" />
+          </v-fade-transition>
+        </router-view>
       </v-container>
     </v-main>
   </v-app>

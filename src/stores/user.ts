@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import * as jose from "jose";
-import axios from "axios";
 import { cookiesStorage } from "./coockiesStorage";
 
 export const useUserStore = defineStore("user", {
@@ -11,6 +10,7 @@ export const useUserStore = defineStore("user", {
     avatar: "",
     token: "",
     loginFail: false,
+    asExpired: false,
   }),
   getters: {
     isLoggedIn(): boolean {
@@ -22,12 +22,13 @@ export const useUserStore = defineStore("user", {
     isExpired(): boolean {
       if (this.getTokenPayload?.exp) {
         const exp = new Date(this.getTokenPayload.exp * 1000);
-        return exp < new Date();
+        const expired = exp < new Date();
+        this.asExpired = expired;
+        return expired;
       }
       return true;
     },
     getTokenPayload: (state) => {
-      const token = state.token;
       return jose.decodeJwt(state.token);
     },
   },

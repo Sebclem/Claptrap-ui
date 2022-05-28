@@ -1,5 +1,7 @@
+import { useEventQueuStore } from "@/stores/eventQueu";
 import { useUserStore } from "@/stores/user";
 import axios from "axios";
+import { useRouter } from "vue-router";
 
 async function login(code: string): Promise<boolean> {
   const userStore = useUserStore();
@@ -21,16 +23,45 @@ async function login(code: string): Promise<boolean> {
 
     userStore.loginFail = false;
     console.log("Loggin success !");
+    const eventQueuStore = useEventQueuStore();
+    eventQueuStore.push({
+      uuid: undefined,
+      type: "success",
+      text: "You are now logged in",
+    });
+
     return true;
   } catch (reason) {
     console.log("Loggin fail !");
     console.log(reason);
-    userStore.token = "";
-    userStore.userName = "";
-    userStore.discordId = "";
-    userStore.loginFail = true;
+    logout(false, true);
+
+    const eventQueuStore = useEventQueuStore();
+    eventQueuStore.push({
+      uuid: undefined,
+      type: "error",
+      text: "Login fail, Please try aguain.",
+    });
     return false;
   }
 }
 
-export { login };
+function logout(expired: boolean, loginFail: boolean): void {
+  const userStore = useUserStore();
+  const router = useRouter();
+
+  userStore.token = "";
+  userStore.userName = "";
+  userStore.discordId = "";
+  userStore.loginFail = loginFail;
+  userStore.asExpired = expired;
+
+  const eventQueuStore = useEventQueuStore();
+  eventQueuStore.push({
+    uuid: undefined,
+    type: "success",
+    text: "Disconnected",
+  });
+}
+
+export { login, logout };

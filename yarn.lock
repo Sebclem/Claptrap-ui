@@ -2026,6 +2026,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^8.3.4":
+  version: 8.3.4
+  resolution: "@types/uuid@npm:8.3.4"
+  checksum: 6f11f3ff70f30210edaa8071422d405e9c1d4e53abbe50fdce365150d3c698fe7bbff65c1e71ae080cbfb8fded860dbb5e174da96fdbbdfcaa3fb3daa474d20f
+  languageName: node
+  linkType: hard
+
 "@types/webfontloader@npm:^1.0.0":
   version: 1.6.34
   resolution: "@types/webfontloader@npm:1.6.34"
@@ -3609,6 +3616,7 @@ __metadata:
     "@types/js-cookie": ^3.0.2
     "@types/jsdom": ^16.2.14
     "@types/node": ^16.11.27
+    "@types/uuid": ^8.3.4
     "@types/webfontloader": ^1.0.0
     "@vitejs/plugin-vue": ^2.3.1
     "@vue/cli": ^5.0.4
@@ -3633,6 +3641,7 @@ __metadata:
     sass: ^1.38.0
     sass-loader: ^10.0.0
     typescript: ~4.6.3
+    uuid: ^8.3.2
     vite: ^2.9.5
     vitest: ^0.9.3
     vue: ^3.2.33
