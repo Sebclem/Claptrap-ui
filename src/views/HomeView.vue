@@ -9,10 +9,23 @@
 </template>
 
 <script lang="ts" setup>
+import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { useUserStore } from "@/stores/user";
 import { onBeforeMount } from "vue";
+import { useRouter } from "vue-router";
 const userStore = useUserStore();
+const mutualGuildStore = useMutualGuildsStore();
+const router = useRouter();
+
 onBeforeMount(() => {
-  userStore.isLoggedIn;
+  if (userStore.isLoggedIn) {
+    if (!mutualGuildStore.lastGuildId) {
+      mutualGuildStore.lastGuildId = mutualGuildStore.guilds[0].id;
+    }
+    router.push({
+      name: "guildHome",
+      params: { guildId: mutualGuildStore.lastGuildId },
+    });
+  }
 });
 </script>

@@ -1,4 +1,8 @@
+import { logout } from "@/services/authService";
+import { getMutualGuilds } from "@/services/guildService";
+import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { useUserStore } from "@/stores/user";
+import GuildHomeViewVue from "@/views/GuildHomeView.vue";
 import OauthCallbackViewVue from "@/views/oauth/OauthCallbackView.vue";
 import OauthRedirectViewVue from "@/views/oauth/OauthRedirectView.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -19,6 +23,14 @@ const router = createRouter({
       component: HomeView,
       meta: {
         requiresAuth: false,
+      },
+    },
+    {
+      path: "/guild/:guildId",
+      name: "guildHome",
+      component: GuildHomeViewVue,
+      meta: {
+        requiresAuth: true,
       },
     },
     {
@@ -43,8 +55,23 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   const store = useUserStore();
   if (to.meta.requiresAuth && !store.isLoggedIn) {
-    (<any>window).location = import.meta.env.VITE_OAUTH_REDIRECT_URL;
-    return false;
+    return { name: "oauth-redirect" };
+  } else {
+    const mutualGuildsStore = useMutualGuildsStore();
+    if (store.isLoggedIn) {
+      getMutualGuilds()
+        .then((value) => {
+          mutualGuildsStore.guilds = value;
+          mutualGuildsStore.loaded = true;
+        })
+        .catch((reason) => {
+          if (reason?.response.status == 401) {
+            console.log("401, Login expired, logout...");
+            logout(true, false);
+            router.push({ name: "home" });
+          }
+        });
+    }
   }
 });
 

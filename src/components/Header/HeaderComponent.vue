@@ -23,21 +23,20 @@
       </v-list-item>
     </v-list>
     <v-divider></v-divider>
-    <server-list-component :guilds="[]" :loaded="false" />
+    <server-list-component />
   </v-navigation-drawer>
   <snackbar-component />
 </template>
 
 <script setup lang="ts">
-import ServerListComponent from "./ServerListComponent.vue";
+import { logout } from "@/services/authService";
 import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
-import { logout } from "@/services/authService";
+import ServerListComponent from "./ServerListComponent.vue";
 import SnackbarComponent from "./SnackbarComponent.vue";
 
 const userStore = useUserStore();
 const { userName, avatar, discriminator, isLoggedIn } = storeToRefs(userStore);
-
 function getAvatar() {
   const avatarBaseUrl = import.meta.env.VITE_DISCORD_USER_AVATAR_URL;
   return avatarBaseUrl + userStore.discordId + "/" + avatar.value + ".png";

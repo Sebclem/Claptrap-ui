@@ -48,8 +48,6 @@ async function login(code: string): Promise<boolean> {
 
 function logout(expired: boolean, loginFail: boolean): void {
   const userStore = useUserStore();
-  const router = useRouter();
-
   userStore.token = "";
   userStore.userName = "";
   userStore.discordId = "";
@@ -57,11 +55,25 @@ function logout(expired: boolean, loginFail: boolean): void {
   userStore.asExpired = expired;
 
   const eventQueuStore = useEventQueuStore();
-  eventQueuStore.push({
-    uuid: undefined,
-    type: "success",
-    text: "Disconnected",
-  });
+  if (!expired && !loginFail) {
+    eventQueuStore.push({
+      uuid: undefined,
+      type: "success",
+      text: "Disconnected",
+    });
+  } else if (expired) {
+    eventQueuStore.push({
+      uuid: undefined,
+      type: "warning",
+      text: "Sesion expired, please re-login",
+    });
+  } else {
+    eventQueuStore.push({
+      uuid: undefined,
+      type: "error",
+      text: "Login fail, please try again",
+    });
+  }
 }
 
 export { login, logout };
