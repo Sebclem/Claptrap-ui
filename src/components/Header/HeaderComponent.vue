@@ -19,7 +19,7 @@
             <v-btn
               icon="mdi-exit-to-app"
               class="text-high-emphasis text-white"
-              v-on:click="logout(false, false)"
+              v-on:click="logoutAndRedirect()"
             ></v-btn>
           </v-list-item-avatar>
         </template>
@@ -43,6 +43,11 @@ const { userName, avatar, discriminator, isLoggedIn } = storeToRefs(userStore);
 function getAvatar() {
   const avatarBaseUrl = import.meta.env.VITE_DISCORD_USER_AVATAR_URL;
   return avatarBaseUrl + userStore.discordId + "/" + avatar.value + ".png";
+}
+
+function logoutAndRedirect() {
+  logout(false, false);
+  window.location.assign("/");
 }
 </script>
 
