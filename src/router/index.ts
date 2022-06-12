@@ -11,6 +11,7 @@ import HomeView from "../views/HomeView.vue";
 declare module "vue-router" {
   interface RouteMeta {
     requiresAuth: boolean;
+    title: string;
   }
 }
 
@@ -23,6 +24,7 @@ const router = createRouter({
       component: HomeView,
       meta: {
         requiresAuth: false,
+        title: "Home",
       },
     },
     {
@@ -31,6 +33,7 @@ const router = createRouter({
       component: GuildHomeViewVue,
       meta: {
         requiresAuth: true,
+        title: "Home",
       },
     },
     {
@@ -39,6 +42,7 @@ const router = createRouter({
       component: OauthCallbackViewVue,
       meta: {
         requiresAuth: false,
+        title: "Login",
       },
     },
     {
@@ -47,6 +51,7 @@ const router = createRouter({
       component: OauthRedirectViewVue,
       meta: {
         requiresAuth: false,
+        title: "Login",
       },
     },
   ],
@@ -54,6 +59,7 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   const store = useUserStore();
+  document.title = `${import.meta.env.VITE_APP_TITLE} -  ${to.meta.title}`;
   if (to.meta.requiresAuth && !store.isLoggedIn) {
     return { name: "oauth-redirect" };
   } else {

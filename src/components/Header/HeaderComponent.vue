@@ -1,7 +1,10 @@
 <template>
   <v-app-bar class="bg-brown-darken-4">
     <v-app-bar-title class="text-yellow font-weight-black text-h4">
-      Claptrap Bot
+      <div class="d-flex align-center">
+        <v-avatar><v-img src="/icon.png"></v-img></v-avatar>
+        <span class="ml-3">Claptrap Bot</span>
+      </div>
     </v-app-bar-title>
   </v-app-bar>
   <v-navigation-drawer expand-on-hover rail position="right" v-if="isLoggedIn">
