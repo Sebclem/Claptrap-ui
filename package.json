@@ -15,7 +15,7 @@
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "@mdi/font": "5.9.55",
+    "@mdi/font": "6.5.95",
     "@types/js-cookie": "^3.0.2",
     "@types/uuid": "^8.3.4",
     "@vue/cli": "^5.0.4",
