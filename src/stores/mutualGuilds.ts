@@ -6,7 +6,7 @@ export const useMutualGuildsStore = defineStore({
   state: () => ({
     guilds: [] as Array<Guild>,
     loaded: false,
-    lastGuildId: "",
+    lastGuildId: undefined as string | undefined,
   }),
   getters: {},
   actions: {

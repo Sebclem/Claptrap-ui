@@ -1,11 +1,13 @@
 <template>
-  <v-row v-if="!userStore.isLoggedIn">
-    <v-col>
-      <v-btn to="/oauth2/redirect" prepend-icon="mdi-discord" color="primary">
-        Login
-      </v-btn>
-    </v-col>
-  </v-row>
+  <div>
+    <v-row v-if="!userStore.isLoggedIn">
+      <v-col>
+        <v-btn to="/oauth2/redirect" prepend-icon="mdi-discord" color="primary">
+          Login
+        </v-btn>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -20,12 +22,14 @@ const router = useRouter();
 onBeforeMount(() => {
   if (userStore.isLoggedIn) {
     if (!mutualGuildStore.lastGuildId) {
-      mutualGuildStore.lastGuildId = mutualGuildStore.guilds[0].id;
+      mutualGuildStore.lastGuildId = mutualGuildStore.guilds[0]?.id;
     }
-    router.push({
-      name: "guildHome",
-      params: { guildId: mutualGuildStore.lastGuildId },
-    });
+    if (mutualGuildStore.lastGuildId) {
+      router.push({
+        name: "guildHome",
+        params: { guildId: mutualGuildStore.lastGuildId },
+      });
+    }
   }
 });
 </script>
