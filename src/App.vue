@@ -3,10 +3,10 @@
     <header-component />
     <v-main>
       <v-container>
-        <router-view v-slot="{ Component }">
-          <v-fade-transition>
-            <component :is="Component" />
-          </v-fade-transition>
+        <router-view v-slot="{ Component, route }">
+          <v-scroll-x-transition mode="out-in">
+            <component :is="Component" :key="route.path" />
+          </v-scroll-x-transition>
         </router-view>
       </v-container>
     </v-main>
