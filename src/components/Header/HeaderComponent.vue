@@ -6,8 +6,21 @@
         <span class="ml-3">Claptrap Bot</span>
       </div>
     </v-app-bar-title>
+    <v-spacer></v-spacer>
+    <v-btn icon to="/"><v-icon>mdi-home</v-icon></v-btn>
+    <v-app-bar-nav-icon
+      @click="drawer = !drawer"
+      v-if="mobile"
+    ></v-app-bar-nav-icon>
   </v-app-bar>
-  <v-navigation-drawer expand-on-hover rail position="right" v-if="isLoggedIn">
+  <v-navigation-drawer
+    :expand-on-hover="!mobile"
+    :rail="!mobile"
+    position="right"
+    v-if="isLoggedIn"
+    v-model="drawer"
+    :temporary="mobile"
+  >
     <v-list class="overflow-hidden">
       <v-list-item
         :prepend-avatar="getAvatar()"
@@ -35,11 +48,16 @@
 import { logout } from "@/services/authService";
 import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
+import { ref } from "vue";
+import { useDisplay } from "vuetify/lib/framework.mjs";
 import ServerListComponent from "./ServerListComponent.vue";
 import SnackbarComponent from "./SnackbarComponent.vue";
 
 const userStore = useUserStore();
+const drawer = ref(true);
 const { userName, avatar, discriminator, isLoggedIn } = storeToRefs(userStore);
+const { mobile } = useDisplay();
+
 function getAvatar() {
   const avatarBaseUrl = import.meta.env.VITE_DISCORD_USER_AVATAR_URL;
   return avatarBaseUrl + userStore.discordId + "/" + avatar.value + ".png";

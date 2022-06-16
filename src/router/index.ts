@@ -3,6 +3,7 @@ import { getMutualGuilds } from "@/services/guildService";
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { useUserStore } from "@/stores/user";
 import GuildHomeViewVue from "@/views/GuildHomeView.vue";
+import GuildSettingViewVue from "@/views/GuildSettingView.vue";
 import OauthCallbackViewVue from "@/views/oauth/OauthCallbackView.vue";
 import OauthRedirectViewVue from "@/views/oauth/OauthRedirectView.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -37,6 +38,15 @@ const router = createRouter({
       },
     },
     {
+      path: "/guild/:guildId/settings",
+      name: "guildSetting",
+      component: GuildSettingViewVue,
+      meta: {
+        requiresAuth: true,
+        title: "Settings",
+      },
+    },
+    {
       path: "/oauth2/callback",
       name: "oauth-callback",
       component: OauthCallbackViewVue,
@@ -60,6 +70,7 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   const store = useUserStore();
   document.title = `${import.meta.env.VITE_APP_TITLE} -  ${to.meta.title}`;
+
   if (to.meta.requiresAuth && !store.isLoggedIn) {
     return { name: "oauth-redirect" };
   } else {

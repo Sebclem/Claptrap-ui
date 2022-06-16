@@ -23,19 +23,17 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-container>
-          <v-row>
-            <v-col cols="6">
-              <MusicPreviewComponent></MusicPreviewComponent>
-            </v-col>
-            <v-col cols="6">
-              <StatsPreviewComponent></StatsPreviewComponent>
-            </v-col>
-            <v-col cols="6">
-              <SettingPreviewComponent />
-            </v-col>
-          </v-row>
-        </v-container>
+        <v-row>
+          <v-col md="6" cols="12">
+            <MusicPreviewComponent></MusicPreviewComponent>
+          </v-col>
+          <v-col md="6" cols="12">
+            <StatsPreviewComponent></StatsPreviewComponent>
+          </v-col>
+          <v-col md="6" cols="12">
+            <SettingPreviewComponent :guild="guild" />
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
   </div>
@@ -43,12 +41,12 @@
 
 <script setup lang="ts">
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";
+import { redirectIfNoGuild } from "@/tools/GuildTools";
 import { ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import SettingPreviewComponent from "../components/guild/home/SettingPreviewComponent.vue";
 import MusicPreviewComponent from "../components/guild/home/MusicPreviewComponent.vue";
+import SettingPreviewComponent from "../components/guild/home/SettingPreviewComponent.vue";
 import StatsPreviewComponent from "../components/guild/home/StatsPreviewComponent.vue";
-import { redirectIfNoGuild } from "@/tools/GuildTools";
 
 const guildStore = useMutualGuildsStore();
 const route = useRoute();
@@ -56,6 +54,7 @@ const router = useRouter();
 
 const guild = ref(guildStore.getGuild(route.params.guildId as string));
 redirectIfNoGuild(guild.value, router);
+
 watch(
   () => route.params.guildId,
   (value, oldValue) => {

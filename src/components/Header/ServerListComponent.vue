@@ -7,7 +7,8 @@
           :key="guild.id"
           :value="guild.id"
           active-color="yellow"
-          :to="`/guild/${guild.id}`"
+          :to="getToUrl(guild)"
+          :disabled="shouldBeDisabled(guild)"
         >
           <v-list-item-avatar
             start
@@ -39,15 +40,23 @@
 </template>
 
 <script setup lang="ts">
+import type { Guild } from "@/data/Guild";
 import { getInviteLink } from "@/services/guildService";
 import { useInviteLinkStore } from "@/stores/inviteLink";
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { storeToRefs } from "pinia";
 import { onBeforeMount } from "vue";
+import {
+  useRouter,
+  type RouteLocation,
+  type RouteLocationRaw,
+} from "vue-router";
 
 const inviteLinkStore = useInviteLinkStore();
 
 const { inviteLink } = storeToRefs(inviteLinkStore);
+
+const router = useRouter();
 
 const mutualGuildsStore = useMutualGuildsStore();
 const { guilds, loaded } = storeToRefs(mutualGuildsStore);
@@ -57,6 +66,19 @@ onBeforeMount(async () => {
     inviteLinkStore.inviteLink = inviteLink.link;
   }
 });
+
+function shouldBeDisabled(guild: Guild) {
+  return router.currentRoute.value.name == "guildSetting" && !guild.canManage;
+}
+
+function getToUrl(guild: Guild): RouteLocationRaw {
+  return {
+    name: router.currentRoute.value.name?.toString(),
+    params: {
+      guildId: guild.id,
+    },
+  };
+}
 </script>
 
 <style scoped></style>
