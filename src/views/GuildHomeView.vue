@@ -2,23 +2,7 @@
   <div v-if="guild">
     <v-row>
       <v-col>
-        <v-card>
-          <v-card-title class="d-flex">
-            <v-avatar
-              :color="guild?.iconUrl ? '' : 'grey-darken-3'"
-              class="mr-3"
-            >
-              <v-img v-if="guild?.iconUrl" :src="guild.iconUrl"></v-img>
-              <template v-if="!guild?.iconUrl">{{ guild?.name[1] }}</template>
-            </v-avatar>
-            <span class="mr-auto">{{ guild?.name }}</span>
-            <v-icon
-              icon="mdi-account-wrench"
-              color="green"
-              v-if="guild?.canManage"
-            ></v-icon>
-          </v-card-title>
-        </v-card>
+        <GuildHeaderComponent :guild="guild" />
       </v-col>
     </v-row>
     <v-row>
@@ -47,6 +31,7 @@ import { useRoute, useRouter } from "vue-router";
 import MusicPreviewComponent from "../components/guild/home/MusicPreviewComponent.vue";
 import SettingPreviewComponent from "../components/guild/home/SettingPreviewComponent.vue";
 import StatsPreviewComponent from "../components/guild/home/StatsPreviewComponent.vue";
+import GuildHeaderComponent from "@/components/guild/GuildHeaderComponent.vue";
 
 const guildStore = useMutualGuildsStore();
 const route = useRoute();

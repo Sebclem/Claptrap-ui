@@ -19,6 +19,6 @@ import HeaderComponent from "./components/Header/HeaderComponent.vue";
 
 <style>
 html {
-  overflow: auto;
+  overflow: auto !important;
 }
 </style>

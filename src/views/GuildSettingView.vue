@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <SettingListComponent :guild="guild" v-if="guild" />
+  <div v-if="guild">
+    <v-row>
+      <v-col>
+        <GuildHeaderComponent :guild="guild" />
+      </v-col>
+    </v-row>
+    <SettingListComponent :guild="guild" />
   </div>
 </template>
 
@@ -10,7 +15,7 @@ import { redirectIfNoGuild } from "@/tools/GuildTools";
 import { ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import SettingListComponent from "../components/guild/Settings/SettingListComponent.vue";
-
+import GuildHeaderComponent from "@/components/guild/GuildHeaderComponent.vue";
 const guildStore = useMutualGuildsStore();
 const route = useRoute();
 const router = useRouter();

@@ -30,12 +30,16 @@
 <script setup lang="ts">
 import type { Guild } from "@/data/guild/Guild";
 import type { SettingDescrition } from "@/data/Setting/SettingDescription";
+import type { SettingValue } from "@/data/Setting/SettingValue";
 import {
   getRoles,
   getTextChannels,
   getVoiceChannels,
 } from "@/services/guildService";
-import { getSettingDescrition } from "@/services/settingsService";
+import {
+  getSettingDescrition,
+  getSettingValues,
+} from "@/services/settingsService";
 import { useSettingStore } from "@/stores/setting";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
@@ -72,13 +76,21 @@ function loadVoiceChannels() {
 function loadRoles() {
   getRoles(props.guild.id).then((value) => {
     roles.value = value;
+    loadSettings();
+  });
+}
+
+function loadSettings() {
+  getSettingValues(props.guild.id).then((value) => {
+    let temp = {} as SettingValue;
+    for (let item of value) {
+      temp[item.id] = item.value;
+    }
+
+    values.value = temp;
     loading.value = false;
   });
 }
 </script>
 
-<style>
-.v-input__details {
-  margin-bottom: 0;
-}
-</style>
+<style scoped></style>
