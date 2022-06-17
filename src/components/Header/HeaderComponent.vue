@@ -16,7 +16,7 @@
   <v-navigation-drawer
     :expand-on-hover="!mobile"
     :rail="!mobile"
-    position="right"
+    location="right"
     v-if="isLoggedIn"
     v-model="drawer"
     :temporary="mobile"

@@ -20,10 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import type { Guild } from "@/data/Guild";
+import type { Guild } from "@/data/guild/Guild";
 
 const properties = defineProps<{
-  guild?: Guild;
+  guild: Guild;
 }>();
 </script>
 

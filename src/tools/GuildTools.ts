@@ -1,4 +1,4 @@
-import type { Guild } from "@/data/Guild";
+import type { Guild } from "@/data/guild/Guild";
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import type { Router } from "vue-router";
 

@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Guild } from "@/data/Guild";
+import type { Guild } from "@/data/guild/Guild";
 import { getInviteLink } from "@/services/guildService";
 import { useInviteLinkStore } from "@/stores/inviteLink";
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";

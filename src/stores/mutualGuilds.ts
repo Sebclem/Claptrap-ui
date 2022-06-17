@@ -1,4 +1,4 @@
-import type { Guild } from "@/data/Guild";
+import type { Guild } from "@/data/guild/Guild";
 import { defineStore } from "pinia";
 
 export const useMutualGuildsStore = defineStore({

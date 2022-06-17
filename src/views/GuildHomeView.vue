@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="guild">
     <v-row>
       <v-col>
         <v-card>

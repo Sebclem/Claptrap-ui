@@ -16,3 +16,9 @@
 <script lang="ts" setup>
 import HeaderComponent from "./components/Header/HeaderComponent.vue";
 </script>
+
+<style>
+html {
+  overflow: auto;
+}
+</style>
