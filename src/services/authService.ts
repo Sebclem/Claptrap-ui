@@ -35,13 +35,6 @@ async function login(code: string): Promise<boolean> {
     console.log("Loggin fail !");
     console.log(reason);
     logout(false, true);
-
-    const eventQueuStore = useEventQueuStore();
-    eventQueuStore.push({
-      uuid: undefined,
-      type: "error",
-      text: "Login fail, Please try aguain.",
-    });
     return false;
   }
 }

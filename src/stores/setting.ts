@@ -4,6 +4,7 @@ import { defineStore } from "pinia";
 export const useSettingStore = defineStore({
   id: "setting",
   state: () => ({
+    savedValues: {} as SettingValue,
     values: {} as SettingValue,
     text_channels: [] as SettingValue[],
     voice_channels: [] as SettingValue[],

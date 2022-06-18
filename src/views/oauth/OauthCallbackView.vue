@@ -13,12 +13,10 @@
 
 <script setup lang="ts">
 import { login } from "@/services/authService";
-import { useUserStore } from "@/stores/user";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const router = useRouter();
-const userStore = useUserStore();
 if (route.query.code) {
   login(route.query.code as string).then(() => {
     router.push("/");

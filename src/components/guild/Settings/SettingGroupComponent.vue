@@ -12,13 +12,7 @@
               ></bool-field-component>
             </v-col>
           </v-row>
-          <template
-            v-if="
-              !!props.descriptor.mainField
-                ? settingStoreRef.values.value[props.descriptor.mainField.id]
-                : true
-            "
-          >
+          <template v-if="isOn">
             <v-row v-for="item of props.descriptor.fields" :key="item.id">
               <v-col>
                 <bool-field-component
@@ -26,10 +20,12 @@
                   :fieldDescription="item"
                 ></bool-field-component>
                 <select-field-component
+                  :required="isOn"
                   :fieldDescription="item"
                   v-if="isSelect(item.type)"
                 ></select-field-component>
                 <text-field-component
+                  :required="isOn"
                   :fieldDescription="item"
                   v-if="item.type == 'STRING'"
                 ></text-field-component>
@@ -45,6 +41,7 @@
 <script setup lang="ts">
 import type { SettingDescrition } from "@/data/Setting/SettingDescription";
 import { useSettingStore } from "@/stores/setting";
+import { computed } from "@vue/reactivity";
 import { storeToRefs } from "pinia";
 import boolFieldComponent from "./fields/BoolFieldComponent.vue";
 import SelectFieldComponent from "./fields/SelectFieldComponent.vue";
@@ -65,6 +62,12 @@ function isSelect(type: string) {
       return false;
   }
 }
+
+const isOn = computed(() => {
+  return props.descriptor.mainField
+    ? !!settingStoreRef.values.value[props.descriptor.mainField.id]
+    : true;
+});
 </script>
 
 <style scoped></style>
