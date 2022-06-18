@@ -2,8 +2,14 @@
   <v-app-bar class="bg-brown-darken-4">
     <v-app-bar-title class="text-yellow font-weight-black text-h4">
       <div class="d-flex align-center">
-        <v-avatar><v-img src="/icon.png"></v-img></v-avatar>
-        <span class="ml-3">Claptrap Bot</span>
+        <router-link to="/">
+          <v-avatar><v-img src="/icon.png"></v-img></v-avatar>
+        </router-link>
+        <span class="ml-3 d-none d-sm-inline">
+          <router-link to="/" class="text-yellow" style="text-decoration: none">
+            Claptrap Bot
+          </router-link>
+        </span>
       </div>
     </v-app-bar-title>
     <v-spacer></v-spacer>

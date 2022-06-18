@@ -27,7 +27,7 @@
       </v-row>
     </v-form>
     <v-row justify="center">
-      <v-col cols="1">
+      <v-col cols="12" md="2">
         <v-btn
           v-on:click="send"
           color="success"

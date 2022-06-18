@@ -41,7 +41,7 @@ function required(value: string) {
 const { loading, roles, text_channels, voice_channels, values } =
   storeToRefs(settingStore);
 const loadingComp = computed(() => {
-  return loading.value ? "primary" : false;
+  return loading.value ? "info" : false;
 });
 
 const items = computed(() => {

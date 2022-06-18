@@ -27,7 +27,7 @@ defineProps<{ fieldDescription: FieldDescriptor }>();
 const settingStore = useSettingStore();
 const { values, loading } = storeToRefs(settingStore);
 const loadingComp = computed(() => {
-  return loading.value ? "primary" : false;
+  return loading.value ? "info" : false;
 });
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-card title="Music">
+  <v-card title="Music" disabled>
     <template v-slot:prepend>
       <v-icon color="yellow" size="x-large">mdi-music-circle</v-icon>
     </template>
