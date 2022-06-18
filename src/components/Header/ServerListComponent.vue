@@ -46,11 +46,7 @@ import { useInviteLinkStore } from "@/stores/inviteLink";
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { storeToRefs } from "pinia";
 import { onBeforeMount } from "vue";
-import {
-  useRouter,
-  type RouteLocation,
-  type RouteLocationRaw,
-} from "vue-router";
+import { useRouter, type RouteLocationRaw } from "vue-router";
 
 const inviteLinkStore = useInviteLinkStore();
 

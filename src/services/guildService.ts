@@ -22,12 +22,14 @@ function getMutualGuilds(): Promise<Guild[]> {
       .catch((reason) => {
         console.error(`Fail to get mutal guilds !`);
         console.log(reason);
-        const eventQueuStore = useEventQueuStore();
-        eventQueuStore.push({
-          uuid: undefined,
-          type: "error",
-          text: "Fail to retrive guilds !",
-        });
+        if (reason?.response.status != 401) {
+          const eventQueuStore = useEventQueuStore();
+          eventQueuStore.push({
+            uuid: undefined,
+            type: "error",
+            text: "Fail to retrive guilds !",
+          });
+        }
         reject(reason);
       });
   });
