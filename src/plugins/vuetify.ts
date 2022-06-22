@@ -5,8 +5,18 @@ import "vuetify/styles";
 // Vuetify
 import { createVuetify } from "vuetify";
 
+const darkTheme = {
+  dark: true,
+  colors: {
+    primary: "#FFC107",
+  },
+};
+
 export default createVuetify({
   theme: {
-    defaultTheme: "dark",
+    defaultTheme: "darkTheme",
+    themes: {
+      darkTheme,
+    },
   },
 });

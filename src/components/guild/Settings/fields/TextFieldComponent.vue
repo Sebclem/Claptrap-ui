@@ -4,7 +4,7 @@
       <v-text-field
         :id="fieldDescription.id"
         :label="fieldDescription.name"
-        color="yellow"
+        color="primary"
         :messages="fieldDescription.description"
         density="compact"
         hide-details="auto"

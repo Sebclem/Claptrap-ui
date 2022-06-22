@@ -1,7 +1,7 @@
 <template>
   <v-card title="Guild Settings" :disabled="!properties.guild?.canManage">
     <template v-slot:prepend>
-      <v-icon color="yellow" size="x-large">mdi-cog</v-icon>
+      <v-icon color="primary" size="x-large">mdi-cog</v-icon>
     </template>
     <v-card-text class="d-flex justify-center">
       <v-btn

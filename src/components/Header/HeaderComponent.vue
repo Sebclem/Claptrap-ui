@@ -1,12 +1,16 @@
 <template>
   <v-app-bar class="bg-brown-darken-4">
-    <v-app-bar-title class="text-yellow font-weight-black text-h4">
+    <v-app-bar-title class="text-primary font-weight-black text-h4">
       <div class="d-flex align-center">
         <router-link to="/">
           <v-avatar><v-img src="/icon.png"></v-img></v-avatar>
         </router-link>
         <span class="ml-3 d-none d-sm-inline">
-          <router-link to="/" class="text-yellow" style="text-decoration: none">
+          <router-link
+            to="/"
+            class="text-primary"
+            style="text-decoration: none"
+          >
             Claptrap Bot
           </router-link>
         </span>

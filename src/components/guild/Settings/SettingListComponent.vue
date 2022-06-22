@@ -9,7 +9,7 @@
     >
       <v-progress-circular
         indeterminate
-        color="yellow"
+        color="primary"
         size="200"
         width="15"
       ></v-progress-circular>

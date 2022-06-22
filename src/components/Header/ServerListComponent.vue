@@ -6,7 +6,7 @@
           v-for="guild of guilds"
           :key="guild.id"
           :value="guild.id"
-          active-color="yellow"
+          active-color="primary"
           :to="getToUrl(guild)"
           :disabled="shouldBeDisabled(guild)"
         >
