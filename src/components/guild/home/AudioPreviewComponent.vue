@@ -9,7 +9,7 @@
       </v-btn>
     </template>
     <v-container class="pt-0">
-      <v-row>
+      <v-row class="px-lg-6 px-0">
         <v-col v-if="!status.connected" class="d-flex align-center">
           <v-avatar color="grey-darken-3" size="x-large">
             <v-icon icon="mdi-connection"></v-icon>
@@ -38,7 +38,7 @@
                     <h4>
                       {{ status.playBackInfo?.trackInfo?.detail.title }}
                     </h4>
-                    <div class="d-flex align-center mr-6">
+                    <div class="d-flex align-center">
                       <h5 class="text-grey-lighten-1">
                         {{ status.playBackInfo?.trackInfo?.detail.author }}
                       </h5>
@@ -101,12 +101,12 @@
           </v-row>
         </v-col>
       </v-row>
-      <v-row class="px-7">
+      <v-row class="px-lg-7 px-0">
         <v-col class="pb-0"> {{ currentProgress }} </v-col>
         <v-col class="d-flex justify-end pb-0"> {{ totalTime }} </v-col>
       </v-row>
-      <v-row>
-        <v-col class="px-10 mt-1">
+      <v-row class="px-lg-7 px-0">
+        <v-col class="mt-1">
           <v-progress-linear
             v-model="progress"
             background-color="blue-grey"
