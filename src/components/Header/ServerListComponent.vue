@@ -9,6 +9,8 @@
           active-color="primary"
           :to="getToUrl(guild)"
           :disabled="shouldBeDisabled(guild)"
+          :data-guild-id="guild.id"
+          @click="clickOnGuild(guild.id)"
         >
           <v-list-item-avatar
             start
@@ -74,6 +76,10 @@ function getToUrl(guild: Guild): RouteLocationRaw {
       guildId: guild.id,
     },
   };
+}
+
+function clickOnGuild(guildId: string) {
+  mutualGuildsStore.lastGuildId = guildId;
 }
 </script>
 

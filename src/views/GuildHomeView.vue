@@ -24,14 +24,14 @@
 </template>
 
 <script setup lang="ts">
+import GuildHeaderComponent from "@/components/guild/GuildHeaderComponent.vue";
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { redirectIfNoGuild } from "@/tools/GuildTools";
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import AudioPreviewComponent from "../components/guild/home/AudioPreviewComponent.vue";
 import SettingPreviewComponent from "../components/guild/home/SettingPreviewComponent.vue";
 import StatsPreviewComponent from "../components/guild/home/StatsPreviewComponent.vue";
-import GuildHeaderComponent from "@/components/guild/GuildHeaderComponent.vue";
 
 const guildStore = useMutualGuildsStore();
 const route = useRoute();
@@ -39,15 +39,6 @@ const router = useRouter();
 
 const guild = ref(guildStore.getGuild(route.params.guildId as string));
 redirectIfNoGuild(guild.value, router);
-
-watch(
-  () => route.params.guildId,
-  (value, oldValue) => {
-    guild.value = guildStore.getGuild(value as string);
-    guildStore.lastGuildId = guild.value?.id;
-    redirectIfNoGuild(guild.value, router);
-  }
-);
 </script>
 
 <style scoped></style>

@@ -15,11 +15,12 @@ import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { useUserStore } from "@/stores/user";
 import { onBeforeMount } from "vue";
 import { useRouter } from "vue-router";
+
 const userStore = useUserStore();
-const mutualGuildStore = useMutualGuildsStore();
 const router = useRouter();
 
 onBeforeMount(() => {
+  const mutualGuildStore = useMutualGuildsStore();
   if (userStore.isLoggedIn) {
     if (!mutualGuildStore.lastGuildId) {
       mutualGuildStore.lastGuildId = mutualGuildStore.guilds[0]?.id;
