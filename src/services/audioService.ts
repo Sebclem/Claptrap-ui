@@ -29,4 +29,36 @@ function getAudioStatus(guildId: string): Promise<Status> {
   });
 }
 
-export { getAudioStatus };
+function connect(guildId: string, voiceChannelId: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const userStore = useUserStore();
+    axios
+      .post<Status>(
+        `/audio/${guildId}/connect`,
+        {
+          channelId: voiceChannelId,
+        },
+        {
+          headers: {
+            authorization: `Bearer ${userStore.token}`,
+          },
+        }
+      )
+      .then(() => {
+        resolve();
+      })
+      .catch((reason) => {
+        console.error(`Fail to connect to voice channel !`);
+        console.log(reason);
+        const eventQueuStore = useEventQueuStore();
+        eventQueuStore.push({
+          uuid: undefined,
+          type: "error",
+          text: "Fail to connect to voice channel !",
+        });
+        reject(reason);
+      });
+  });
+}
+
+export { getAudioStatus, connect };

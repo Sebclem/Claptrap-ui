@@ -4,9 +4,35 @@
       <v-icon color="primary" size="x-large">mdi-music-circle</v-icon>
     </template>
     <template v-slot:append v-if="status.connected && status.canView">
-      <v-btn color="black" :disabled="connectBtnDisable" size="small">
-        {{ status.channel?.name }}
-      </v-btn>
+      <v-menu v-model="chanListMenuOpen">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            color="black"
+            :disabled="connectBtnDisable"
+            size="small"
+            v-bind="props"
+          >
+            {{ status.channel?.name }}
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list v-if="chanListLoading">
+            <v-list-item>
+              <v-progress-circular indeterminate color="primary" />
+            </v-list-item>
+          </v-list>
+          <v-list
+            v-else
+            :items="voiceChannelList"
+            item-title="name"
+            item-value="id"
+            :selected="selectedListVoice"
+            active-color="primary"
+            @update:selected="voiceChannelSelected"
+          >
+          </v-list>
+        </v-list>
+      </v-menu>
     </template>
     <v-container class="pt-0">
       <v-row class="px-lg-6 px-0">
@@ -140,11 +166,21 @@
             variant="outlined"
           ></v-btn>
           <v-btn
-            :icon="connectBtnIcon"
+            v-if="status.connected"
+            icon="mdi-eject"
             variant="outlined"
             :disabled="connectBtnDisable"
             :color="connectBtnDisable ? '' : 'primary'"
             class="elevation-10"
+          ></v-btn>
+          <v-btn
+            v-else
+            icon="mdi-connection"
+            variant="outlined"
+            :disabled="connectBtnDisable"
+            :color="connectBtnDisable ? '' : 'primary'"
+            class="elevation-10"
+            id="connectBtn"
           ></v-btn>
         </v-col>
       </v-row>
@@ -174,14 +210,37 @@
       </v-overlay>
     </v-container>
   </v-card>
+
+  <v-menu
+    v-model="chanListMenuOpen"
+    activator="#connectBtn"
+    v-if="!status.connected"
+  >
+    <v-list v-if="chanListLoading">
+      <v-list-item>
+        <v-progress-circular indeterminate color="primary" />
+      </v-list-item>
+    </v-list>
+    <v-list
+      v-else
+      :items="voiceChannelList"
+      item-title="name"
+      item-value="id"
+      @update:selected="voiceChannelSelected"
+    >
+    </v-list>
+  </v-menu>
 </template>
 
 <script setup lang="ts">
+import type { Chanel } from "@/data/guild/Channel";
 import type { Guild } from "@/data/guild/Guild";
 import type { Status } from "@/data/music/Status";
-import { getAudioStatus } from "@/services/audioService";
+import { connect, getAudioStatus } from "@/services/audioService";
+import { getVoiceChannels } from "@/services/guildService";
 import { computed } from "@vue/reactivity";
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { onBeforeRouteUpdate } from "vue-router";
 
 const properties = defineProps<{
   guild: Guild;
@@ -190,6 +249,10 @@ const properties = defineProps<{
 const loading = ref(true);
 
 const status = ref<Status>({ connected: false });
+
+const chanListMenuOpen = ref(false);
+const chanListLoading = ref(true);
+const voiceChannelList = ref<Chanel[]>([]);
 
 getAudioStatus(properties.guild.id).then((value) => {
   status.value = value;
@@ -235,10 +298,6 @@ const playPauseIcon = computed(() => {
   return status.value.playBackInfo?.paused ? "mdi-play" : "mdi-pause";
 });
 
-const connectBtnIcon = computed(() => {
-  return status.value.connected ? "mdi-eject" : "mdi-connection";
-});
-
 const currentProgress = computed(() => {
   if (
     !status.value.connected ||
@@ -272,11 +331,36 @@ function timeToMMSS(time: number) {
   return `${minutes}:${("0" + seconds).slice(-2)}`;
 }
 
-setInterval(() => {
+watch(chanListMenuOpen, (value) => {
+  if (value) {
+    chanListLoading.value = true;
+    voiceChannelList.value = [];
+    getVoiceChannels(properties.guild.id).then((value) => {
+      voiceChannelList.value = value;
+      chanListLoading.value = false;
+    });
+  }
+});
+
+function voiceChannelSelected(value: string[]) {
+  if (value[0] != status.value.channel?.id) {
+    connect(properties.guild.id, value[0]);
+  }
+}
+
+const selectedListVoice = computed(() => {
+  return [status.value.channel?.id as string];
+});
+
+let interval = setInterval(() => {
   getAudioStatus(properties.guild.id).then((value) => {
     status.value = value;
   });
 }, 1000);
+
+onBeforeRouteUpdate(() => {
+  clearInterval(interval);
+});
 </script>
 
 <style scoped></style>
