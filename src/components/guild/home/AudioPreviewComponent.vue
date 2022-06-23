@@ -151,6 +151,7 @@
             variant="outlined"
             :disabled="actionBtnDisable"
             :color="actionBtnDisable ? '' : 'primary'"
+            @click="playPause"
           ></v-btn>
           <v-btn
             icon="mdi-skip-next"
@@ -158,6 +159,7 @@
             variant="outlined"
             :disabled="actionBtnDisable"
             :color="actionBtnDisable ? '' : 'primary'"
+            @click="skip"
           ></v-btn>
           <v-btn
             icon="mdi-stop"
@@ -165,6 +167,7 @@
             :disabled="actionBtnDisable"
             :color="actionBtnDisable ? '' : 'primary'"
             variant="outlined"
+            @click="stop"
           ></v-btn>
           <v-btn
             v-if="status.connected"
@@ -240,7 +243,7 @@
 import type { Chanel } from "@/data/guild/Channel";
 import type { Guild } from "@/data/guild/Guild";
 import type { Status } from "@/data/music/Status";
-import { connect, getAudioStatus, disconnect } from "@/services/audioService";
+import * as audioService from "@/services/audioService";
 import { getVoiceChannels } from "@/services/guildService";
 import { computed } from "@vue/reactivity";
 import { ref, watch } from "vue";
@@ -342,7 +345,7 @@ watch(chanListMenuOpen, (value) => {
 function voiceChannelSelected(value: string[]) {
   voiceChannelConnecting.value = true;
   if (value[0] != status.value.channel?.id) {
-    connect(properties.guild.id, value[0]).then((value) => {
+    audioService.connect(properties.guild.id, value[0]).then((value) => {
       if (value) {
         status.value = value.data;
         voiceChannelConnecting.value = false;
@@ -352,7 +355,52 @@ function voiceChannelSelected(value: string[]) {
 }
 
 function onDisconnect() {
-  disconnect(properties.guild.id)
+  audioService
+    .disconnect(properties.guild.id)
+    .then((value) => {
+      if (value) {
+        status.value = value.data;
+      }
+    })
+    .catch();
+}
+
+function playPause() {
+  if (status.value.playBackInfo?.paused) {
+    audioService
+      .resume(properties.guild.id)
+      .then((value) => {
+        if (value) {
+          status.value = value.data;
+        }
+      })
+      .catch();
+  } else {
+    audioService
+      .pause(properties.guild.id)
+      .then((value) => {
+        if (value) {
+          status.value = value.data;
+        }
+      })
+      .catch();
+  }
+}
+
+function skip() {
+  audioService
+    .skip(properties.guild.id)
+    .then((value) => {
+      if (value) {
+        status.value = value.data;
+      }
+    })
+    .catch();
+}
+
+function stop() {
+  audioService
+    .stop(properties.guild.id)
     .then((value) => {
       if (value) {
         status.value = value.data;
@@ -368,7 +416,7 @@ function timeToMMSS(time: number) {
   return `${minutes}:${("0" + seconds).slice(-2)}`;
 }
 
-getAudioStatus(properties.guild.id).then((value) => {
+audioService.getAudioStatus(properties.guild.id).then((value) => {
   if (value) {
     status.value = value.data;
     loading.value = false;
@@ -376,7 +424,7 @@ getAudioStatus(properties.guild.id).then((value) => {
 });
 
 let interval = setInterval(() => {
-  getAudioStatus(properties.guild.id).then((value) => {
+  audioService.getAudioStatus(properties.guild.id).then((value) => {
     if (value) {
       status.value = value.data;
     }
