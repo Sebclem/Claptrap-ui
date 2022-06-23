@@ -164,7 +164,6 @@
                   variant="outlined"
                   label="Url"
                   hide-details="auto"
-                  @change="add"
                   color="primary"
                   autofocus
                   :loading="urlLoading"
@@ -462,6 +461,19 @@ function stop() {
 function add() {
   if (url.value) {
     urlLoading.value = true;
+    audioService
+      .add(properties.guild.id, url.value)
+      .then((value) => {
+        if (value) {
+          status.value = value.data;
+        }
+        urlLoading.value = false;
+        urlPopup.value = false;
+        url.value = "";
+      })
+      .catch(() => {
+        urlLoading.value = false;
+      });
   }
 }
 

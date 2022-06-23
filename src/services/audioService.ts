@@ -169,4 +169,30 @@ function stop(guildId: string) {
     });
 }
 
-export { getAudioStatus, connect, disconnect, resume, pause, skip, stop };
+function add(guildId: string, url: string) {
+  const userStore = useUserStore();
+  return axios
+    .post<Status>(
+      `/audio/${guildId}/add`,
+      {
+        url: url,
+      },
+      {
+        headers: {
+          authorization: `Bearer ${userStore.token}`,
+        },
+      }
+    )
+    .catch((reason) => {
+      console.error(`Fail to add track to playlist !`);
+      console.log(reason);
+      const eventQueuStore = useEventQueuStore();
+      eventQueuStore.push({
+        uuid: undefined,
+        type: "error",
+        text: "Fail to add track to playlist !",
+      });
+    });
+}
+
+export { getAudioStatus, connect, disconnect, resume, pause, skip, stop, add };
