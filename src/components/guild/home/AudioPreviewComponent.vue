@@ -11,6 +11,7 @@
             :disabled="connectBtnDisable"
             size="small"
             v-bind="props"
+            :loading="voiceChannelConnecting"
           >
             {{ status.channel?.name }}
           </v-btn>
@@ -172,16 +173,19 @@
             :disabled="connectBtnDisable"
             :color="connectBtnDisable ? '' : 'primary'"
             class="elevation-10"
+            @click="onDisconnect"
           ></v-btn>
           <v-btn
             v-else
             icon="mdi-connection"
+            :loading="voiceChannelConnecting"
             variant="outlined"
             :disabled="connectBtnDisable"
             :color="connectBtnDisable ? '' : 'primary'"
             class="elevation-10"
             id="connectBtn"
-          ></v-btn>
+          >
+          </v-btn>
         </v-col>
       </v-row>
       <v-overlay
@@ -236,11 +240,11 @@
 import type { Chanel } from "@/data/guild/Channel";
 import type { Guild } from "@/data/guild/Guild";
 import type { Status } from "@/data/music/Status";
-import { connect, getAudioStatus } from "@/services/audioService";
+import { connect, getAudioStatus, disconnect } from "@/services/audioService";
 import { getVoiceChannels } from "@/services/guildService";
 import { computed } from "@vue/reactivity";
 import { ref, watch } from "vue";
-import { onBeforeRouteUpdate } from "vue-router";
+import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router";
 
 const properties = defineProps<{
   guild: Guild;
@@ -253,11 +257,7 @@ const status = ref<Status>({ connected: false });
 const chanListMenuOpen = ref(false);
 const chanListLoading = ref(true);
 const voiceChannelList = ref<Chanel[]>([]);
-
-getAudioStatus(properties.guild.id).then((value) => {
-  status.value = value;
-  loading.value = false;
-});
+const voiceChannelConnecting = ref(false);
 
 const progress = computed(() => {
   if (
@@ -324,12 +324,9 @@ const privateChan = computed(() => {
   return status.value.connected && !status.value.canView;
 });
 
-function timeToMMSS(time: number) {
-  let seconds = Math.floor(time / 1000);
-  const minutes = Math.floor(seconds / 60);
-  seconds = seconds % 60;
-  return `${minutes}:${("0" + seconds).slice(-2)}`;
-}
+const selectedListVoice = computed(() => {
+  return [status.value.channel?.id as string];
+});
 
 watch(chanListMenuOpen, (value) => {
   if (value) {
@@ -343,22 +340,54 @@ watch(chanListMenuOpen, (value) => {
 });
 
 function voiceChannelSelected(value: string[]) {
+  voiceChannelConnecting.value = true;
   if (value[0] != status.value.channel?.id) {
-    connect(properties.guild.id, value[0]);
+    connect(properties.guild.id, value[0]).then((value) => {
+      if (value) {
+        status.value = value.data;
+        voiceChannelConnecting.value = false;
+      }
+    });
   }
 }
 
-const selectedListVoice = computed(() => {
-  return [status.value.channel?.id as string];
+function onDisconnect() {
+  disconnect(properties.guild.id)
+    .then((value) => {
+      if (value) {
+        status.value = value.data;
+      }
+    })
+    .catch();
+}
+
+function timeToMMSS(time: number) {
+  let seconds = Math.floor(time / 1000);
+  const minutes = Math.floor(seconds / 60);
+  seconds = seconds % 60;
+  return `${minutes}:${("0" + seconds).slice(-2)}`;
+}
+
+getAudioStatus(properties.guild.id).then((value) => {
+  if (value) {
+    status.value = value.data;
+    loading.value = false;
+  }
 });
 
 let interval = setInterval(() => {
   getAudioStatus(properties.guild.id).then((value) => {
-    status.value = value;
+    if (value) {
+      status.value = value.data;
+    }
   });
 }, 1000);
 
 onBeforeRouteUpdate(() => {
+  clearInterval(interval);
+});
+
+onBeforeRouteLeave(() => {
   clearInterval(interval);
 });
 </script>

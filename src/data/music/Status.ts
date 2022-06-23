@@ -4,6 +4,7 @@ import type { TrackInfo } from "./TrackInfo";
 type Status = {
   connected: boolean;
   canView?: boolean;
+  connectionStatus?: string;
   canInteract?: boolean;
   channel?: Chanel;
   playBackInfo?: {

@@ -3,62 +3,74 @@ import { useEventQueuStore } from "@/stores/eventQueu";
 import { useUserStore } from "@/stores/user";
 import axios from "axios";
 
-function getAudioStatus(guildId: string): Promise<Status> {
-  return new Promise((resolve, reject) => {
-    const userStore = useUserStore();
-    axios
-      .get<Status>(`/audio/${guildId}/status`, {
+function getAudioStatus(guildId: string) {
+  const userStore = useUserStore();
+  return axios
+    .get<Status>(`/audio/${guildId}/status`, {
+      headers: {
+        authorization: `Bearer ${userStore.token}`,
+      },
+    })
+    .catch((reason) => {
+      console.error(`Fail to retrive audio status !`);
+      console.log(reason);
+      const eventQueuStore = useEventQueuStore();
+      eventQueuStore.push({
+        uuid: undefined,
+        type: "error",
+        text: "Fail to retrive audio status !",
+      });
+    });
+}
+
+function connect(guildId: string, voiceChannelId: string) {
+  const userStore = useUserStore();
+  return axios
+    .post<Status>(
+      `/audio/${guildId}/connect`,
+      {
+        channelId: voiceChannelId,
+      },
+      {
         headers: {
           authorization: `Bearer ${userStore.token}`,
         },
-      })
-      .then((value) => {
-        resolve(value.data);
-      })
-      .catch((reason) => {
-        console.error(`Fail to retrive audio status !`);
-        console.log(reason);
-        const eventQueuStore = useEventQueuStore();
-        eventQueuStore.push({
-          uuid: undefined,
-          type: "error",
-          text: "Fail to retrive audio status !",
-        });
-        reject(reason);
+      }
+    )
+    .catch((reason) => {
+      console.error(`Fail to connect to voice channel !`);
+      console.log(reason);
+      const eventQueuStore = useEventQueuStore();
+      eventQueuStore.push({
+        uuid: undefined,
+        type: "error",
+        text: "Fail to connect to voice channel !",
       });
-  });
+    });
 }
 
-function connect(guildId: string, voiceChannelId: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const userStore = useUserStore();
-    axios
-      .post<Status>(
-        `/audio/${guildId}/connect`,
-        {
-          channelId: voiceChannelId,
+function disconnect(guildId: string) {
+  const userStore = useUserStore();
+  return axios
+    .post<Status>(
+      `/audio/${guildId}/disconnect`,
+      {},
+      {
+        headers: {
+          authorization: `Bearer ${userStore.token}`,
         },
-        {
-          headers: {
-            authorization: `Bearer ${userStore.token}`,
-          },
-        }
-      )
-      .then(() => {
-        resolve();
-      })
-      .catch((reason) => {
-        console.error(`Fail to connect to voice channel !`);
-        console.log(reason);
-        const eventQueuStore = useEventQueuStore();
-        eventQueuStore.push({
-          uuid: undefined,
-          type: "error",
-          text: "Fail to connect to voice channel !",
-        });
-        reject(reason);
+      }
+    )
+    .catch((reason) => {
+      console.error(`Fail to disconnect from voice channel !`);
+      console.log(reason);
+      const eventQueuStore = useEventQueuStore();
+      eventQueuStore.push({
+        uuid: undefined,
+        type: "error",
+        text: "Fail to disconnect from voice channel !",
       });
-  });
+    });
 }
 
-export { getAudioStatus, connect };
+export { getAudioStatus, connect, disconnect };
