@@ -143,8 +143,49 @@
           ></v-progress-linear>
         </v-col>
       </v-row>
-      <v-row>
-        <v-col class="d-flex justify-center mt-2">
+      <v-row class="mt-2 px-lg-6 px-0">
+        <v-col class="d-flex justify-start">
+          <v-menu :close-on-content-click="false">
+            <template v-slot:activator="{ props }">
+              <v-btn
+                icon="mdi-plus"
+                class="mr-4 elevation-10"
+                variant="outlined"
+                :disabled="addBtnDisabled"
+                :color="addBtnDisabled ? '' : 'primary'"
+                v-bind="props"
+              ></v-btn>
+            </template>
+            <v-card min-width="300" v-model="urlPopup">
+              <v-card-content>
+                <v-text-field
+                  v-model="url"
+                  density="compact"
+                  variant="outlined"
+                  label="Url"
+                  hide-details="auto"
+                  @change="add"
+                  color="primary"
+                  autofocus
+                  :loading="urlLoading"
+                  :disabled="urlLoading"
+                >
+                  <template v-slot:append>
+                    <v-icon
+                      @click="add"
+                      color="primary"
+                      :style="urlLoading ? '' : 'opacity: 1'"
+                      :disabled="urlLoading"
+                    >
+                      mdi-plus-circle
+                    </v-icon>
+                  </template>
+                </v-text-field>
+              </v-card-content>
+            </v-card>
+          </v-menu>
+        </v-col>
+        <v-col class="d-flex justify-center">
           <v-btn
             :icon="playPauseIcon"
             class="mr-4 elevation-10"
@@ -169,6 +210,8 @@
             variant="outlined"
             @click="stop"
           ></v-btn>
+        </v-col>
+        <v-col class="d-flex justify-end">
           <v-btn
             v-if="status.connected"
             icon="mdi-eject"
@@ -261,6 +304,9 @@ const chanListMenuOpen = ref(false);
 const chanListLoading = ref(true);
 const voiceChannelList = ref<Chanel[]>([]);
 const voiceChannelConnecting = ref(false);
+const url = ref("");
+const urlPopup = ref(false);
+const urlLoading = ref(false);
 
 const progress = computed(() => {
   if (
@@ -295,6 +341,10 @@ const actionBtnDisable = computed(() => {
 });
 const connectBtnDisable = computed(() => {
   return status.value.connected && !status.value.canInteract;
+});
+
+const addBtnDisabled = computed(() => {
+  return !status.value.connected && !status.value.canInteract;
 });
 
 const playPauseIcon = computed(() => {
@@ -407,6 +457,12 @@ function stop() {
       }
     })
     .catch();
+}
+
+function add() {
+  if (url.value) {
+    urlLoading.value = true;
+  }
 }
 
 function timeToMMSS(time: number) {
