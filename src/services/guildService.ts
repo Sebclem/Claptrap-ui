@@ -3,7 +3,7 @@ import type { Guild } from "@/data/guild/Guild";
 import type { InviteLink } from "@/data/InviteLink";
 import { useEventQueuStore } from "@/stores/eventQueu";
 import { useUserStore } from "@/stores/user";
-import axios from "axios";
+import axios from "./axiosConfig";
 
 function getMutualGuilds(): Promise<Guild[]> {
   return new Promise((resolve, reject) => {
@@ -21,7 +21,6 @@ function getMutualGuilds(): Promise<Guild[]> {
       })
       .catch((reason) => {
         console.error(`Fail to get mutal guilds !`);
-        console.log(reason);
         if (reason?.response.status != 401) {
           const eventQueuStore = useEventQueuStore();
           eventQueuStore.push({
@@ -51,7 +50,6 @@ function getInviteLink(): Promise<InviteLink> {
       })
       .catch((reason) => {
         console.error(`Fail to get Invite !`);
-        console.log(reason);
         const eventQueuStore = useEventQueuStore();
         eventQueuStore.push({
           uuid: undefined,
@@ -77,7 +75,6 @@ function getTextChannels(guildId: string): Promise<Chanel[]> {
       })
       .catch((reason) => {
         console.error(`Fail to get text channels !`);
-        console.log(reason);
         const eventQueuStore = useEventQueuStore();
         eventQueuStore.push({
           uuid: undefined,
@@ -103,7 +100,6 @@ function getVoiceChannels(guildId: string): Promise<Chanel[]> {
       })
       .catch((reason) => {
         console.error(`Fail to get text channels !`);
-        console.log(reason);
         const eventQueuStore = useEventQueuStore();
         eventQueuStore.push({
           uuid: undefined,
@@ -128,7 +124,6 @@ function getRoles(guildId: string): Promise<Chanel[]> {
       })
       .catch((reason) => {
         console.error(`Fail to get roles !`);
-        console.log(reason);
         const eventQueuStore = useEventQueuStore();
         eventQueuStore.push({
           uuid: undefined,

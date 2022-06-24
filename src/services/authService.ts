@@ -1,6 +1,6 @@
 import { useEventQueuStore } from "@/stores/eventQueu";
 import { useUserStore } from "@/stores/user";
-import axios from "axios";
+import axios from "./axiosConfig";
 import { useRouter } from "vue-router";
 
 async function login(code: string): Promise<boolean> {
@@ -33,7 +33,6 @@ async function login(code: string): Promise<boolean> {
     return true;
   } catch (reason) {
     console.log("Loggin fail !");
-    console.log(reason);
     logout(false, true);
     return false;
   }
@@ -41,6 +40,9 @@ async function login(code: string): Promise<boolean> {
 
 function logout(expired: boolean, loginFail: boolean): void {
   const userStore = useUserStore();
+  if (!userStore.isLoggedIn) {
+    return;
+  }
   userStore.token = "";
   userStore.userName = "";
   userStore.discordId = "";

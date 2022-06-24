@@ -12,6 +12,5 @@ const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
-axios.defaults.headers.post["Content-Type"] = "application/json";
 
 createApp(App).use(router).use(vuetify).use(pinia).mount("#app");

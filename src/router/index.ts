@@ -76,18 +76,10 @@ router.beforeEach((to, from) => {
   } else {
     const mutualGuildsStore = useMutualGuildsStore();
     if (store.isLoggedIn) {
-      getMutualGuilds()
-        .then((value) => {
-          mutualGuildsStore.guilds = value;
-          mutualGuildsStore.loaded = true;
-        })
-        .catch((reason) => {
-          if (reason?.response.status == 401) {
-            console.log("401, Login expired, logout...");
-            logout(true, false);
-            router.push({ name: "home" });
-          }
-        });
+      getMutualGuilds().then((value) => {
+        mutualGuildsStore.guilds = value;
+        mutualGuildsStore.loaded = true;
+      });
     }
   }
 });

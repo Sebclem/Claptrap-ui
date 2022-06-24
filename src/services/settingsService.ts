@@ -3,7 +3,7 @@ import type { SettingDescrition } from "@/data/Setting/SettingDescription";
 import type { SettingValue } from "@/data/Setting/SettingValue";
 import { useEventQueuStore } from "@/stores/eventQueu";
 import { useUserStore } from "@/stores/user";
-import axios from "axios";
+import axios from "./axiosConfig";
 
 function getSettingDescrition() {
   return new Promise<SettingDescrition[]>((resole, reject) => {
@@ -35,7 +35,6 @@ function getSettingValues(guildId: string): Promise<RawSettingValue[]> {
       })
       .catch((reason) => {
         console.error(`Fail to get settings !`);
-        console.log(reason);
         const eventQueuStore = useEventQueuStore();
         eventQueuStore.push({
           uuid: undefined,
@@ -67,7 +66,6 @@ function sendSetting(
       })
       .catch((reason) => {
         console.error(`Fail to save settings !`);
-        console.log(reason);
         const eventQueuStore = useEventQueuStore();
         eventQueuStore.push({
           uuid: undefined,

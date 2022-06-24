@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import * as jose from "jose";
 import { cookiesStorage } from "./coockiesStorage";
+import type { RouteLocationRaw } from "vue-router";
 
 export const useUserStore = defineStore("user", {
   state: () => ({
@@ -11,6 +12,7 @@ export const useUserStore = defineStore("user", {
     token: "",
     loginFail: false,
     asExpired: false,
+    originRoute: undefined as RouteLocationRaw | undefined,
   }),
   getters: {
     isLoggedIn(): boolean {

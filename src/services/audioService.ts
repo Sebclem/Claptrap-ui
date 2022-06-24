@@ -1,7 +1,7 @@
 import type { Status } from "@/data/music/Status";
 import { useEventQueuStore } from "@/stores/eventQueu";
 import { useUserStore } from "@/stores/user";
-import axios from "axios";
+import axios from "./axiosConfig";
 
 function getAudioStatus(guildId: string) {
   const userStore = useUserStore();
@@ -13,7 +13,6 @@ function getAudioStatus(guildId: string) {
     })
     .catch((reason) => {
       console.error(`Fail to retrive audio status !`);
-      console.log(reason);
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
@@ -39,7 +38,6 @@ function connect(guildId: string, voiceChannelId: string) {
     )
     .catch((reason) => {
       console.error(`Fail to connect to voice channel !`);
-      console.log(reason);
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
@@ -63,7 +61,7 @@ function disconnect(guildId: string) {
     )
     .catch((reason) => {
       console.error(`Fail to disconnect from voice channel !`);
-      console.log(reason);
+
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
@@ -87,7 +85,6 @@ function resume(guildId: string) {
     )
     .catch((reason) => {
       console.error(`Fail to resume playback !`);
-      console.log(reason);
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
@@ -111,7 +108,6 @@ function pause(guildId: string) {
     )
     .catch((reason) => {
       console.error(`Fail to pause playback !`);
-      console.log(reason);
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
@@ -135,7 +131,6 @@ function skip(guildId: string) {
     )
     .catch((reason) => {
       console.error(`Fail to skip playback !`);
-      console.log(reason);
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
@@ -159,7 +154,6 @@ function stop(guildId: string) {
     )
     .catch((reason) => {
       console.error(`Fail to stop playback !`);
-      console.log(reason);
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
@@ -185,7 +179,6 @@ function add(guildId: string, url: string) {
     )
     .catch((reason) => {
       console.error(`Fail to add track to playlist !`);
-      console.log(reason);
       const eventQueuStore = useEventQueuStore();
       eventQueuStore.push({
         uuid: undefined,
