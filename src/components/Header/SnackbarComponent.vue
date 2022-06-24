@@ -39,13 +39,17 @@ eventQueuStore.$subscribe((mutation, state) => {
   if (state.events.length != 0) {
     let event = eventQueuStore.shift();
     if (event?.uuid) {
-      snacks.value.push({
-        snack: true,
-        text: event.text,
-        color: event.type,
-        uuid: event.uuid,
-        icon: getIcon(event.type),
-      });
+      if (
+        snacks.value.filter((value) => value.text == event?.text).length == 0
+      ) {
+        snacks.value.push({
+          snack: true,
+          text: event.text,
+          color: event.type,
+          uuid: event.uuid,
+          icon: getIcon(event.type),
+        });
+      }
     }
   }
 });
@@ -64,13 +68,15 @@ watch(
 if (eventQueuStore.size != 0) {
   let event = eventQueuStore.shift();
   if (event?.uuid) {
-    snacks.value.push({
-      snack: true,
-      text: event.text,
-      color: event.type,
-      uuid: event.uuid,
-      icon: getIcon(event.type),
-    });
+    if (snacks.value.filter((value) => value.text == event?.text).length == 0) {
+      snacks.value.push({
+        snack: true,
+        text: event.text,
+        color: event.type,
+        uuid: event.uuid,
+        icon: getIcon(event.type),
+      });
+    }
   }
 }
 
