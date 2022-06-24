@@ -145,7 +145,7 @@
       </v-row>
       <v-row class="mt-2 px-lg-6 px-0">
         <v-col class="d-flex justify-start">
-          <v-menu :close-on-content-click="false">
+          <v-menu :close-on-content-click="false" v-model="urlPopup">
             <template v-slot:activator="{ props }">
               <v-btn
                 icon="mdi-plus"
@@ -156,30 +156,32 @@
                 v-bind="props"
               ></v-btn>
             </template>
-            <v-card min-width="300" v-model="urlPopup">
+            <v-card min-width="300">
               <v-card-content>
-                <v-text-field
-                  v-model="url"
-                  density="compact"
-                  variant="outlined"
-                  label="Url"
-                  hide-details="auto"
-                  color="primary"
-                  autofocus
-                  :loading="urlLoading"
-                  :disabled="urlLoading"
-                >
-                  <template v-slot:append>
-                    <v-icon
-                      @click="add"
-                      color="primary"
-                      :style="urlLoading ? '' : 'opacity: 1'"
-                      :disabled="urlLoading"
-                    >
-                      mdi-plus-circle
-                    </v-icon>
-                  </template>
-                </v-text-field>
+                <v-form @submit.prevent="add">
+                  <v-text-field
+                    v-model="url"
+                    density="compact"
+                    variant="outlined"
+                    label="Url"
+                    hide-details="auto"
+                    color="primary"
+                    autofocus
+                    :loading="urlLoading"
+                    :disabled="urlLoading"
+                  >
+                    <template v-slot:append>
+                      <v-icon
+                        @click="add"
+                        color="primary"
+                        :style="urlLoading ? '' : 'opacity: 1'"
+                        :disabled="urlLoading"
+                      >
+                        mdi-plus-circle
+                      </v-icon>
+                    </template>
+                  </v-text-field>
+                </v-form>
               </v-card-content>
             </v-card>
           </v-menu>
@@ -287,6 +289,7 @@ import type { Guild } from "@/data/guild/Guild";
 import type { Status } from "@/data/music/Status";
 import * as audioService from "@/services/audioService";
 import { getVoiceChannels } from "@/services/guildService";
+import { useEventQueuStore } from "@/stores/eventQueu";
 import { computed } from "@vue/reactivity";
 import { ref, watch } from "vue";
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router";
@@ -470,6 +473,12 @@ function add() {
         urlLoading.value = false;
         urlPopup.value = false;
         url.value = "";
+        const eventQueuStore = useEventQueuStore();
+        eventQueuStore.push({
+          uuid: undefined,
+          type: "success",
+          text: "Track added to playlist !",
+        });
       })
       .catch(() => {
         urlLoading.value = false;

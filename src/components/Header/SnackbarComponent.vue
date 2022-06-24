@@ -40,7 +40,9 @@ eventQueuStore.$subscribe((mutation, state) => {
     let event = eventQueuStore.shift();
     if (event?.uuid) {
       if (
-        snacks.value.filter((value) => value.text == event?.text).length == 0
+        snacks.value.filter(
+          (value) => event?.type == "error" && value.text == event?.text
+        ).length == 0
       ) {
         snacks.value.push({
           snack: true,
