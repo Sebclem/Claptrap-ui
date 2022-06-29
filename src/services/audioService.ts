@@ -19,6 +19,7 @@ function getAudioStatus(guildId: string) {
         type: "error",
         text: "Fail to retrive audio status !",
       });
+      return Promise.reject(reason);
     });
 }
 
@@ -44,6 +45,7 @@ function connect(guildId: string, voiceChannelId: string) {
         type: "error",
         text: "Fail to connect to voice channel !",
       });
+      return Promise.reject(reason);
     });
 }
 
@@ -68,6 +70,7 @@ function disconnect(guildId: string) {
         type: "error",
         text: "Fail to disconnect from voice channel !",
       });
+      return Promise.reject(reason);
     });
 }
 
@@ -91,6 +94,7 @@ function resume(guildId: string) {
         type: "error",
         text: "Fail to resume playback !",
       });
+      return Promise.reject(reason);
     });
 }
 
@@ -114,6 +118,7 @@ function pause(guildId: string) {
         type: "error",
         text: "Fail to pause playback !",
       });
+      return Promise.reject(reason);
     });
 }
 
@@ -137,6 +142,7 @@ function skip(guildId: string) {
         type: "error",
         text: "Fail to skip playback !",
       });
+      return Promise.reject(reason);
     });
 }
 
@@ -160,6 +166,7 @@ function stop(guildId: string) {
         type: "error",
         text: "Fail to stop playback !",
       });
+      return Promise.reject(reason);
     });
 }
 
@@ -185,6 +192,7 @@ function add(guildId: string, url: string) {
         type: "error",
         text: "Fail to add track to playlist !",
       });
+      return Promise.reject(reason);
     });
 }
 
