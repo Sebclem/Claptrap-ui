@@ -59,10 +59,8 @@ const router = useRouter();
 const mutualGuildsStore = useMutualGuildsStore();
 const { guilds, loaded } = storeToRefs(mutualGuildsStore);
 onBeforeMount(async () => {
-  if (!inviteLinkStore.isPresent) {
-    let inviteLink = await getInviteLink();
-    inviteLinkStore.inviteLink = inviteLink.link;
-  }
+  let inviteLink = await getInviteLink();
+  inviteLinkStore.inviteLink = inviteLink.link;
 });
 
 function shouldBeDisabled(guild: Guild) {
