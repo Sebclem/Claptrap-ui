@@ -43,11 +43,11 @@
 
 <script setup lang="ts">
 import type { Guild } from "@/data/guild/Guild";
-import { getInviteLink } from "@/services/guildService";
+import { getInviteLink, getMutualGuilds } from "@/services/guildService";
 import { useInviteLinkStore } from "@/stores/inviteLink";
 import { useMutualGuildsStore } from "@/stores/mutualGuilds";
 import { storeToRefs } from "pinia";
-import { onBeforeMount } from "vue";
+import { onBeforeMount, onBeforeUnmount } from "vue";
 import { useRouter, type RouteLocationRaw } from "vue-router";
 
 const inviteLinkStore = useInviteLinkStore();
@@ -79,6 +79,26 @@ function getToUrl(guild: Guild): RouteLocationRaw {
 function clickOnGuild(guildId: string) {
   mutualGuildsStore.lastGuildId = guildId;
 }
+
+function loadMutualGuilds() {
+  getMutualGuilds().then((value) => {
+    mutualGuildsStore.guilds = value;
+    mutualGuildsStore.loaded = true;
+    if (
+      !mutualGuildsStore.getGuild(
+        router.currentRoute.value.params?.guildId as string
+      )
+    ) {
+      router.push("/");
+    }
+  });
+}
+
+const interval = setInterval(loadMutualGuilds, 5000);
+
+onBeforeUnmount(() => {
+  clearInterval(interval);
+});
 </script>
 
 <style scoped></style>
