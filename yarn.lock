@@ -3684,7 +3684,7 @@ __metadata:
     prettier: 2.7.1
     roboto-fontface: "*"
     sass: 1.53.0
-    sass-loader: 10.3.0
+    sass-loader: 13.0.2
     typescript: 4.7.4
     uuid: 8.3.2
     vite: 2.9.13
@@ -9163,20 +9163,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:10.3.0":
-  version: 10.3.0
-  resolution: "sass-loader@npm:10.3.0"
+"sass-loader@npm:13.0.2":
+  version: 13.0.2
+  resolution: "sass-loader@npm:13.0.2"
   dependencies:
     klona: ^2.0.4
-    loader-utils: ^2.0.0
     neo-async: ^2.6.2
-    schema-utils: ^3.0.0
-    semver: ^7.3.2
   peerDependencies:
     fibers: ">= 3.1.0"
     node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
     sass: ^1.3.0
-    webpack: ^4.36.0 || ^5.0.0
+    sass-embedded: "*"
+    webpack: ^5.0.0
   peerDependenciesMeta:
     fibers:
       optional: true
@@ -9184,7 +9182,9 @@ __metadata:
       optional: true
     sass:
       optional: true
-  checksum: 554144457cadccd583530ee9e4f5a7cca9bba3f79083fe848620edd03f39e3fab4f31316ee0add06c84683d505dca092788680f0e2c6f9bb54275eaecb97d6d1
+    sass-embedded:
+      optional: true
+  checksum: 6306712cc75bd4b4260ce67178778c92110089485f358b5956b6b12aba15a55e5c7287154daaf8b32678891df915b7bcda7356991afe8bf08ca7356ed30eb448
   languageName: node
   linkType: hard
 
@@ -9267,7 +9267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.1.2, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.6, semver@npm:^7.3.7":
+"semver@npm:^7.1.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.6, semver@npm:^7.3.7":
   version: 7.3.7
   resolution: "semver@npm:7.3.7"
   dependencies:
