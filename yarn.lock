@@ -1665,7 +1665,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:^1.1.0":
+"@rushstack/eslint-patch@npm:1.1.3":
   version: 1.1.3
   resolution: "@rushstack/eslint-patch@npm:1.1.3"
   checksum: 53752d1e34e45a91b30a016b837c33054fcbd0a295c0312b0812dab78289ea680d7c0c3f19c1f885f49764d416727747133765ff5bfce31a9c4cc93c7a56ebe1
@@ -1852,7 +1852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-cookie@npm:^3.0.2":
+"@types/js-cookie@npm:3.0.2":
   version: 3.0.2
   resolution: "@types/js-cookie@npm:3.0.2"
   checksum: 7ab964288dd26373e134ed0bcde4a7dbea7e6f5de1805e2d1e48eac847e89a0e7f5fdc9164c37931680ec97c6e6e5a73e3e4039e0d08527c2e21badd7bee62d1
@@ -1869,7 +1869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:^16.2.14":
+"@types/jsdom@npm:16.2.14":
   version: 16.2.14
   resolution: "@types/jsdom@npm:16.2.14"
   dependencies:
@@ -1949,17 +1949,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:16.11.36":
+  version: 16.11.36
+  resolution: "@types/node@npm:16.11.36"
+  checksum: 878e8e2032869785dd4f73dd862042c7eb588fb9a27199f1b493a7029438ccb58f96e203c35c2e66e08307ca3f9767133cae888958c15e031982f7e9719e5e47
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^10.1.0":
   version: 10.17.60
   resolution: "@types/node@npm:10.17.60"
   checksum: 2cdb3a77d071ba8513e5e8306fa64bf50e3c3302390feeaeff1fd325dd25c8441369715dfc8e3701011a72fed5958c7dfa94eb9239a81b3c286caa4d97db6eef
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^16.11.27":
-  version: 16.11.36
-  resolution: "@types/node@npm:16.11.36"
-  checksum: 878e8e2032869785dd4f73dd862042c7eb588fb9a27199f1b493a7029438ccb58f96e203c35c2e66e08307ca3f9767133cae888958c15e031982f7e9719e5e47
   languageName: node
   linkType: hard
 
@@ -2026,14 +2026,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:^8.3.4":
+"@types/uuid@npm:8.3.4":
   version: 8.3.4
   resolution: "@types/uuid@npm:8.3.4"
   checksum: 6f11f3ff70f30210edaa8071422d405e9c1d4e53abbe50fdce365150d3c698fe7bbff65c1e71ae080cbfb8fded860dbb5e174da96fdbbdfcaa3fb3daa474d20f
   languageName: node
   linkType: hard
 
-"@types/webfontloader@npm:^1.0.0":
+"@types/webfontloader@npm:1.6.34":
   version: 1.6.34
   resolution: "@types/webfontloader@npm:1.6.34"
   checksum: acd945cbf76f22f9f1040ed0b86aafba0b0dd1f5fe05238896208273fd4243eec9412e0349fb4991948ee62102270ddacc21e354052dcbdcd5a3278131f83277
@@ -2166,7 +2166,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:^2.3.1":
+"@vitejs/plugin-vue@npm:2.3.3":
   version: 2.3.3
   resolution: "@vitejs/plugin-vue@npm:2.3.3"
   peerDependencies:
@@ -2439,7 +2439,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/eslint-config-prettier@npm:^7.0.0":
+"@vue/eslint-config-prettier@npm:7.0.0":
   version: 7.0.0
   resolution: "@vue/eslint-config-prettier@npm:7.0.0"
   dependencies:
@@ -2452,7 +2452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/eslint-config-typescript@npm:^10.0.0":
+"@vue/eslint-config-typescript@npm:10.0.0":
   version: 10.0.0
   resolution: "@vue/eslint-config-typescript@npm:10.0.0"
   dependencies:
@@ -2557,7 +2557,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/test-utils@npm:^2.0.0-rc.20":
+"@vue/test-utils@npm:2.0.0":
   version: 2.0.0
   resolution: "@vue/test-utils@npm:2.0.0"
   peerDependencies:
@@ -2566,7 +2566,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/tsconfig@npm:^0.1.3":
+"@vue/tsconfig@npm:0.1.3":
   version: 0.1.3
   resolution: "@vue/tsconfig@npm:0.1.3"
   peerDependencies:
@@ -2590,7 +2590,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuetify/vite-plugin@npm:^1.0.0-alpha.0":
+"@vuetify/vite-plugin@npm:1.0.0-alpha.10":
   version: 1.0.0-alpha.10
   resolution: "@vuetify/vite-plugin@npm:1.0.0-alpha.10"
   dependencies:
@@ -3185,7 +3185,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.27.2":
+"axios@npm:0.27.2":
   version: 0.27.2
   resolution: "axios@npm:0.27.2"
   dependencies:
@@ -3691,45 +3691,45 @@ __metadata:
   resolution: "claptrap-ui@workspace:."
   dependencies:
     "@mdi/font": 6.5.95
-    "@rushstack/eslint-patch": ^1.1.0
-    "@types/js-cookie": ^3.0.2
-    "@types/jsdom": ^16.2.14
-    "@types/node": ^16.11.27
-    "@types/uuid": ^8.3.4
-    "@types/webfontloader": ^1.0.0
-    "@vitejs/plugin-vue": ^2.3.1
+    "@rushstack/eslint-patch": 1.1.3
+    "@types/js-cookie": 3.0.2
+    "@types/jsdom": 16.2.14
+    "@types/node": 16.11.36
+    "@types/uuid": 8.3.4
+    "@types/webfontloader": 1.6.34
+    "@vitejs/plugin-vue": 2.3.3
     "@vue/cli": 5.0.6
-    "@vue/eslint-config-prettier": ^7.0.0
-    "@vue/eslint-config-typescript": ^10.0.0
-    "@vue/test-utils": ^2.0.0-rc.20
-    "@vue/tsconfig": ^0.1.3
-    "@vuetify/vite-plugin": ^1.0.0-alpha.0
-    axios: ^0.27.2
-    eslint: ^8.5.0
-    eslint-plugin-vue: ^8.2.0
-    husky: ">=6"
-    jose: ^4.8.1
-    js-cookie: ^3.0.1
-    jsdom: ^19.0.0
-    lint-staged: ">=10"
-    pinia: ^2.0.13
-    pinia-plugin-persistedstate: ^1.6.0
-    pinst: ">=2"
-    prettier: ^2.5.1
+    "@vue/eslint-config-prettier": 7.0.0
+    "@vue/eslint-config-typescript": 10.0.0
+    "@vue/test-utils": 2.0.0
+    "@vue/tsconfig": 0.1.3
+    "@vuetify/vite-plugin": 1.0.0-alpha.10
+    axios: 0.27.2
+    eslint: 8.15.0
+    eslint-plugin-vue: 8.7.1
+    husky: 8.0.1
+    jose: 4.8.1
+    js-cookie: 3.0.1
+    jsdom: 19.0.0
+    lint-staged: 12.4.1
+    pinia: 2.0.14
+    pinia-plugin-persistedstate: 1.6.0
+    pinst: 3.0.0
+    prettier: 2.6.2
     roboto-fontface: "*"
-    sass: ^1.38.0
-    sass-loader: ^10.0.0
-    typescript: ~4.6.3
-    uuid: ^8.3.2
+    sass: 1.52.0
+    sass-loader: 10.2.1
+    typescript: 4.6.4
+    uuid: 8.3.2
     vite: 2.9.13
-    vitest: ^0.9.3
+    vitest: 0.9.4
     vue: 3.2.37
-    vue-cli-plugin-vuetify: ~2.4.8
-    vue-router: ^4.0.14
-    vue-tsc: ^0.34.7
+    vue-cli-plugin-vuetify: 2.4.8
+    vue-router: 4.0.15
+    vue-tsc: 0.34.15
     vuetify: 3.0.0-beta.5
-    vuetify-loader: ^2.0.0-alpha.0
-    webfontloader: ^1.0.0
+    vuetify-loader: 2.0.0-alpha.9
+    webfontloader: 1.6.28
   languageName: unknown
   linkType: soft
 
@@ -4923,7 +4923,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vue@npm:^8.2.0":
+"eslint-plugin-vue@npm:8.7.1":
   version: 8.7.1
   resolution: "eslint-plugin-vue@npm:8.7.1"
   dependencies:
@@ -4984,7 +4984,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.5.0":
+"eslint@npm:8.15.0":
   version: 8.15.0
   resolution: "eslint@npm:8.15.0"
   dependencies:
@@ -6277,7 +6277,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:>=6":
+"husky@npm:8.0.1":
   version: 8.0.1
   resolution: "husky@npm:8.0.1"
   bin:
@@ -6930,14 +6930,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:^4.8.1":
+"jose@npm:4.8.1":
   version: 4.8.1
   resolution: "jose@npm:4.8.1"
   checksum: c3e239ccbb07863c28250aedea3e734e4a3b26abc1cbf6acf333381db5ef31e5d1eeced791299076f13b24f41b4b463a7a1e4eaa0079ae0febf9bfd60acb555a
   languageName: node
   linkType: hard
 
-"js-cookie@npm:^3.0.1":
+"js-cookie@npm:3.0.1":
   version: 3.0.1
   resolution: "js-cookie@npm:3.0.1"
   checksum: bb48de67e2a6bd1ae3dfd6b2d5a167c33dd0c5a37e909206161eb0358c98f17cb55acd55827a58e9eea3630d89444e7479f7938ef4420dda443218b8c434a4c3
@@ -7012,7 +7012,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^19.0.0":
+"jsdom@npm:19.0.0":
   version: 19.0.0
   resolution: "jsdom@npm:19.0.0"
   dependencies:
@@ -7219,7 +7219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:>=10":
+"lint-staged@npm:12.4.1":
   version: 12.4.1
   resolution: "lint-staged@npm:12.4.1"
   dependencies:
@@ -8457,7 +8457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia-plugin-persistedstate@npm:^1.6.0":
+"pinia-plugin-persistedstate@npm:1.6.0":
   version: 1.6.0
   resolution: "pinia-plugin-persistedstate@npm:1.6.0"
   peerDependencies:
@@ -8466,7 +8466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia@npm:^2.0.13":
+"pinia@npm:2.0.14":
   version: 2.0.14
   resolution: "pinia@npm:2.0.14"
   dependencies:
@@ -8501,7 +8501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinst@npm:>=2":
+"pinst@npm:3.0.0":
   version: 3.0.0
   resolution: "pinst@npm:3.0.0"
   bin:
@@ -8613,7 +8613,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.5.1":
+"prettier@npm:2.6.2":
   version: 2.6.2
   resolution: "prettier@npm:2.6.2"
   bin:
@@ -9181,7 +9181,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^10.0.0":
+"sass-loader@npm:10.2.1":
   version: 10.2.1
   resolution: "sass-loader@npm:10.2.1"
   dependencies:
@@ -9206,7 +9206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.38.0":
+"sass@npm:1.52.0":
   version: 1.52.0
   resolution: "sass@npm:1.52.0"
   dependencies:
@@ -10231,6 +10231,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:4.6.4":
+  version: 4.6.4
+  resolution: "typescript@npm:4.6.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: e7bfcc39cd4571a63a54e5ea21f16b8445268b9900bf55aee0e02ad981be576acc140eba24f1af5e3c1457767c96cea6d12861768fb386cf3ffb34013718631a
+  languageName: node
+  linkType: hard
+
 "typescript@npm:~4.5.5":
   version: 4.5.5
   resolution: "typescript@npm:4.5.5"
@@ -10241,13 +10251,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~4.6.3":
+"typescript@patch:typescript@4.6.4#~builtin<compat/typescript>":
   version: 4.6.4
-  resolution: "typescript@npm:4.6.4"
+  resolution: "typescript@patch:typescript@npm%3A4.6.4#~builtin<compat/typescript>::version=4.6.4&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: e7bfcc39cd4571a63a54e5ea21f16b8445268b9900bf55aee0e02ad981be576acc140eba24f1af5e3c1457767c96cea6d12861768fb386cf3ffb34013718631a
+  checksum: 1cb434fbc637d347be90e3a0c6cd05e33c38f941713c8786d3031faf1842c2c148ba91d2fac01e7276b0ae3249b8633f1660e32686cc7a8c6a8fd5361dc52c66
   languageName: node
   linkType: hard
 
@@ -10258,16 +10268,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 858c61fa63f7274ca4aaaffeced854d550bf416cff6e558c4884041b3311fb662f476f167cf5c9f8680c607239797e26a2ee0bcc6467fbc05bfcb218e1c6c671
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@~4.6.3#~builtin<compat/typescript>":
-  version: 4.6.4
-  resolution: "typescript@patch:typescript@npm%3A4.6.4#~builtin<compat/typescript>::version=4.6.4&hash=7ad353"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 1cb434fbc637d347be90e3a0c6cd05e33c38f941713c8786d3031faf1842c2c148ba91d2fac01e7276b0ae3249b8633f1660e32686cc7a8c6a8fd5361dc52c66
   languageName: node
   linkType: hard
 
@@ -10458,21 +10458,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"uuid@npm:8.3.2, uuid@npm:^8.0.0, uuid@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
 "uuid@npm:^3.1.0":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
   bin:
     uuid: ./bin/uuid
   checksum: 58de2feed61c59060b40f8203c0e4ed7fd6f99d42534a499f1741218a1dd0c129f4aa1de797bcf822c8ea5da7e4137aa3673431a96dae729047f7aca7b27866f
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^8.0.0, uuid@npm:^8.3.2":
-  version: 8.3.2
-  resolution: "uuid@npm:8.3.2"
-  bin:
-    uuid: dist/bin/uuid
-  checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
   languageName: node
   linkType: hard
 
@@ -10567,7 +10567,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^0.9.3":
+"vitest@npm:0.9.4":
   version: 0.9.4
   resolution: "vitest@npm:0.9.4"
   dependencies:
@@ -10598,7 +10598,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-cli-plugin-vuetify@npm:~2.4.8":
+"vue-cli-plugin-vuetify@npm:2.4.8":
   version: 2.4.8
   resolution: "vue-cli-plugin-vuetify@npm:2.4.8"
   dependencies:
@@ -10670,7 +10670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-router@npm:^4.0.14":
+"vue-router@npm:4.0.15":
   version: 4.0.15
   resolution: "vue-router@npm:4.0.15"
   dependencies:
@@ -10681,7 +10681,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-tsc@npm:^0.34.7":
+"vue-tsc@npm:0.34.15":
   version: 0.34.15
   resolution: "vue-tsc@npm:0.34.15"
   dependencies:
@@ -10714,7 +10714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify-loader@npm:^2.0.0-alpha.0":
+"vuetify-loader@npm:2.0.0-alpha.9":
   version: 2.0.0-alpha.9
   resolution: "vuetify-loader@npm:2.0.0-alpha.9"
   dependencies:
@@ -10783,7 +10783,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webfontloader@npm:^1.0.0":
+"webfontloader@npm:1.6.28":
   version: 1.6.28
   resolution: "webfontloader@npm:1.6.28"
   checksum: cbebbe593cb0d27dbb4d418f7f96bd9893024f1f2062e858af76209b6524e25d766964b6e2a724f3b694fadef661dd3a01065455a96df05337b3281ca09ab656
