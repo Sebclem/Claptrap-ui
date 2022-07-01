@@ -3648,7 +3648,7 @@ __metadata:
     vue-cli-plugin-vuetify: ~2.4.8
     vue-router: ^4.0.14
     vue-tsc: ^0.34.7
-    vuetify: ^3.0.0-beta.4
+    vuetify: 3.0.0-beta.5
     vuetify-loader: ^2.0.0-alpha.0
     webfontloader: ^1.0.0
   languageName: unknown
@@ -10626,9 +10626,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify@npm:^3.0.0-beta.4":
-  version: 3.0.0-beta.4
-  resolution: "vuetify@npm:3.0.0-beta.4"
+"vuetify@npm:3.0.0-beta.5":
+  version: 3.0.0-beta.5
+  resolution: "vuetify@npm:3.0.0-beta.5"
   peerDependencies:
     "@formatjs/intl": ^1.0.0 || ^2.0.0
     vite-plugin-vuetify: 1.0.0-alpha.12
@@ -10644,7 +10644,7 @@ __metadata:
       optional: true
     webpack-plugin-vuetify:
       optional: true
-  checksum: 7c6d67c2f25a1bc62b52a6c551e747f890e1f9362696781a5e6f16ad96e2c2d8be56eb0eeef338d6da511e18672f86dd2d9e97ca1bc7453bc9dd75abd93209d5
+  checksum: fda158713cfa524f5ce0fd974b603e96a16fd5bd394ece3a24bf2c342864476003b07ec1ef794111b97186b357dd73ba585f1f65479732a942941044bd43f177
   languageName: node
   linkType: hard
 
