@@ -3,8 +3,8 @@
     <v-card>
       <v-card-title>{{ props.descriptor.name }}</v-card-title>
       <v-card-content class="pt-1">
-        <v-container class="py-0">
-          <v-row v-if="props.descriptor.mainField" class="mb-4">
+        <v-container class="pt-0">
+          <v-row v-if="props.descriptor.mainField">
             <v-col>
               <bool-field-component
                 v-if="props.descriptor.mainField.type == 'BOOL'"
@@ -41,7 +41,7 @@
 <script setup lang="ts">
 import type { SettingDescrition } from "@/data/Setting/SettingDescription";
 import { useSettingStore } from "@/stores/setting";
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
 import { storeToRefs } from "pinia";
 import boolFieldComponent from "./fields/BoolFieldComponent.vue";
 import SelectFieldComponent from "./fields/SelectFieldComponent.vue";
