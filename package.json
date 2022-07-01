@@ -55,7 +55,7 @@
     "vite": "2.9.13",
     "vitest": "0.16.0",
     "vue-cli-plugin-vuetify": "2.5.1",
-    "vue-tsc": "0.34.15",
+    "vue-tsc": "0.38.2",
     "vuetify-loader": "2.0.0-alpha.9"
   },
   "lint-staged": {
