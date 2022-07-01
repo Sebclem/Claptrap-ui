@@ -3708,7 +3708,7 @@ __metadata:
     eslint: 8.18.0
     eslint-plugin-vue: 8.7.1
     husky: 8.0.1
-    jose: 4.8.1
+    jose: 4.8.3
     js-cookie: 3.0.1
     jsdom: 19.0.0
     lint-staged: 12.5.0
@@ -6930,10 +6930,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:4.8.1":
-  version: 4.8.1
-  resolution: "jose@npm:4.8.1"
-  checksum: c3e239ccbb07863c28250aedea3e734e4a3b26abc1cbf6acf333381db5ef31e5d1eeced791299076f13b24f41b4b463a7a1e4eaa0079ae0febf9bfd60acb555a
+"jose@npm:4.8.3":
+  version: 4.8.3
+  resolution: "jose@npm:4.8.3"
+  checksum: a4a03d329d3611696d94a81df06e7fe160cef987da032ecc9e0a9d1e5e751b5101d1657eed16ead5f1905c9c2009d48820538412af4e5257f205a8754dd09d31
   languageName: node
   linkType: hard
 
