@@ -3736,7 +3736,7 @@ __metadata:
     vite: 2.9.13
     vitest: 0.16.0
     vue: 3.2.37
-    vue-cli-plugin-vuetify: 2.4.8
+    vue-cli-plugin-vuetify: 2.5.1
     vue-router: 4.0.16
     vue-tsc: 0.34.15
     vuetify: 3.0.0-beta.5
@@ -10590,19 +10590,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-cli-plugin-vuetify@npm:2.4.8":
-  version: 2.4.8
-  resolution: "vue-cli-plugin-vuetify@npm:2.4.8"
+"vue-cli-plugin-vuetify@npm:2.5.1":
+  version: 2.5.1
+  resolution: "vue-cli-plugin-vuetify@npm:2.5.1"
   dependencies:
     null-loader: ^4.0.1
     semver: ^7.1.2
     shelljs: ^0.8.3
+  peerDependencies:
+    webpack: ^4.0.0 || ^5.0.0
   peerDependenciesMeta:
     sass-loader:
       optional: true
     vuetify-loader:
       optional: true
-  checksum: 50689d04887d41e23a602dcd930a2835537578b89b263a815d0f23761c34e61611d3c54f2e5f32ee425ecff7d422130812ab01cc2f62b8fca63f56c1898b9fa0
+  checksum: 55035cc1c911669c35f362c2ce511ba2ea6a7e085b689254e49fa4eeb320510ab7c5139ea5308b01ef245dc7230c5b28fc7c7f64a7a471841079fca4bcb5b463
   languageName: node
   linkType: hard
 
