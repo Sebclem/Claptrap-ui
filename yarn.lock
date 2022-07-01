@@ -3725,7 +3725,7 @@ __metadata:
     vitest: 0.9.4
     vue: 3.2.37
     vue-cli-plugin-vuetify: 2.4.8
-    vue-router: 4.0.15
+    vue-router: 4.0.16
     vue-tsc: 0.34.15
     vuetify: 3.0.0-beta.5
     vuetify-loader: 2.0.0-alpha.9
@@ -10677,14 +10677,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-router@npm:4.0.15":
-  version: 4.0.15
-  resolution: "vue-router@npm:4.0.15"
+"vue-router@npm:4.0.16":
+  version: 4.0.16
+  resolution: "vue-router@npm:4.0.16"
   dependencies:
     "@vue/devtools-api": ^6.0.0
   peerDependencies:
     vue: ^3.2.0
-  checksum: 9fcfcd05db32b565059af8e70499e5f7c9f81d555aa9d95f2e8ef306fba941a288985037874e184e6212e8c49d509ad61d12e6c4bd94f3e4fbf578934293ec51
+  checksum: 4b8e417c96404d4f4c69539112dfafc52f3b2427db3663d5129413a9b65aafdb95889d756af4c6d08a84d7f9e80cc0ae4667383f2c090f27c27ea4b5d83c4cec
   languageName: node
   linkType: hard
 
