@@ -18,7 +18,7 @@
     "@mdi/font": "6.5.95",
     "@types/js-cookie": "^3.0.2",
     "@types/uuid": "^8.3.4",
-    "@vue/cli": "^5.0.4",
+    "@vue/cli": "5.0.6",
     "axios": "^0.27.2",
     "jose": "^4.8.1",
     "js-cookie": "^3.0.1",
@@ -26,7 +26,7 @@
     "pinia-plugin-persistedstate": "^1.6.0",
     "roboto-fontface": "*",
     "uuid": "^8.3.2",
-    "vue": "^3.2.33",
+    "vue": "3.2.37",
     "vue-router": "^4.0.14",
     "vuetify": "^3.0.0-beta.4",
     "webfontloader": "^1.0.0"
