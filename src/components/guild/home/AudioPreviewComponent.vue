@@ -3,8 +3,11 @@
     <template v-slot:prepend>
       <v-icon color="primary" size="x-large">mdi-music-circle</v-icon>
     </template>
-    <template v-slot:append v-if="status.connected && status.canView">
-      <v-menu v-model="chanListMenuOpen">
+    <template v-slot:append>
+      <v-menu
+        v-model="chanListMenuOpen"
+        v-if="status.connected && status.canView"
+      >
         <template v-slot:activator="{ props }">
           <v-btn
             color="black"
@@ -156,32 +159,34 @@
                 v-bind="props"
               ></v-btn>
             </template>
-            <v-card min-width="300">
+            <v-card min-width="300" class="rounded-lg">
               <v-card-content>
-                <v-form @submit.prevent="add">
-                  <v-text-field
-                    v-model="url"
-                    density="compact"
-                    variant="outlined"
-                    label="Url"
-                    hide-details="auto"
-                    color="primary"
-                    autofocus
-                    :loading="urlLoading"
-                    :disabled="urlLoading"
-                  >
-                    <template v-slot:append>
-                      <v-icon
-                        @click="add"
-                        color="primary"
-                        :style="urlLoading ? '' : 'opacity: 1'"
-                        :disabled="urlLoading"
-                      >
-                        mdi-plus-circle
-                      </v-icon>
-                    </template>
-                  </v-text-field>
-                </v-form>
+                <v-container>
+                  <v-form @submit.prevent="add">
+                    <v-text-field
+                      v-model="url"
+                      density="compact"
+                      variant="outlined"
+                      label="Url"
+                      hide-details="auto"
+                      color="primary"
+                      autofocus
+                      :loading="urlLoading"
+                      :disabled="urlLoading"
+                    >
+                      <template v-slot:append>
+                        <v-icon
+                          @click="add"
+                          color="primary"
+                          :style="urlLoading ? '' : 'opacity: 1'"
+                          :disabled="urlLoading"
+                        >
+                          mdi-plus-circle
+                        </v-icon>
+                      </template>
+                    </v-text-field>
+                  </v-form>
+                </v-container>
               </v-card-content>
             </v-card>
           </v-menu>
@@ -290,7 +295,7 @@ import type { Status } from "@/data/music/Status";
 import * as audioService from "@/services/audioService";
 import { getVoiceChannels } from "@/services/guildService";
 import { useEventQueuStore } from "@/stores/eventQueu";
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
 import { ref, watch } from "vue";
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router";
 
@@ -500,7 +505,7 @@ audioService.getAudioStatus(properties.guild.id).then((value) => {
   }
 });
 
-let interval = setInterval(() => {
+const interval = setInterval(() => {
   audioService.getAudioStatus(properties.guild.id).then((value) => {
     if (value) {
       status.value = value.data;
