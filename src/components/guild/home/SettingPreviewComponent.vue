@@ -1,5 +1,5 @@
 <template>
-  <v-card title="Settings" :disabled="!properties.guild?.canManage">
+  <v-card title="Settings" v-if="!properties.guild?.canManage">
     <template v-slot:prepend>
       <v-icon color="primary" size="x-large">mdi-cog</v-icon>
     </template>
