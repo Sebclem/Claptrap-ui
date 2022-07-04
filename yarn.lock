@@ -189,10 +189,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.11.42":
-  version: 16.11.42
-  resolution: "@types/node@npm:16.11.42"
-  checksum: a1746910cf27c9e8597805556c943bde5e630c5c4e03bdd2513ccd7fe5fce1ed912f51f5d0ce5dcda0583e5539177f76ad35a19caa9525307d7a722aa9962631
+"@types/node@npm:16.11.43":
+  version: 16.11.43
+  resolution: "@types/node@npm:16.11.43"
+  checksum: 96d09e68347c49ebf84fe1443360edc3f98336f0794256abc8e4f29ef3070546357cae17083d6fd9767b631239367c4f245fe64accff4af057d17bd6694f0b2b
   languageName: node
   linkType: hard
 
@@ -543,12 +543,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/test-utils@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@vue/test-utils@npm:2.0.0"
+"@vue/test-utils@npm:2.0.2":
+  version: 2.0.2
+  resolution: "@vue/test-utils@npm:2.0.2"
   peerDependencies:
     vue: ^3.0.1
-  checksum: 538f168387ac47a92ea66980e3a88b00ad9ca6ec44cdc471610ebd3ecfbf6acc4628f8d3d4477cf8265c9ba494134101621aac622d4faf823e6f11f36be973a5
+  checksum: 384bdd4231d3f3eaa02e2ffaef2e2c90934cd9f44ab53fdfe1e9603fbe9a0e702c4a15e8bdc0fc907af210f23abe35fc43a4814598ed0a297af4fa144161f87f
   languageName: node
   linkType: hard
 
@@ -965,13 +965,13 @@ __metadata:
     "@rushstack/eslint-patch": 1.1.4
     "@types/js-cookie": 3.0.2
     "@types/jsdom": 16.2.14
-    "@types/node": 16.11.42
+    "@types/node": 16.11.43
     "@types/uuid": 8.3.4
     "@types/webfontloader": 1.6.34
     "@vitejs/plugin-vue": 2.3.3
     "@vue/eslint-config-prettier": 7.0.0
     "@vue/eslint-config-typescript": 11.0.0
-    "@vue/test-utils": 2.0.0
+    "@vue/test-utils": 2.0.2
     "@vue/tsconfig": 0.1.3
     axios: 0.27.2
     eslint: 8.18.0
@@ -3129,7 +3129,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.1.10, postcss@npm:^8.4.13, postcss@npm:^8.4.14":
+"postcss@npm:^8.1.10, postcss@npm:^8.4.13":
   version: 8.4.14
   resolution: "postcss@npm:8.4.14"
   dependencies:
@@ -3924,7 +3924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:2.9.13":
+"vite@npm:2.9.13, vite@npm:^2.9.12":
   version: 2.9.13
   resolution: "vite@npm:2.9.13"
   dependencies:
@@ -3953,41 +3953,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^2.9.12 || ^3.0.0-0":
-  version: 3.0.0-beta.5
-  resolution: "vite@npm:3.0.0-beta.5"
-  dependencies:
-    esbuild: ^0.14.47
-    fsevents: ~2.3.2
-    postcss: ^8.4.14
-    resolve: ^1.22.1
-    rollup: ^2.75.6
-  peerDependencies:
-    less: "*"
-    sass: "*"
-    stylus: "*"
-    terser: ^5.4.0
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  peerDependenciesMeta:
-    less:
-      optional: true
-    sass:
-      optional: true
-    stylus:
-      optional: true
-    terser:
-      optional: true
-  bin:
-    vite: bin/vite.js
-  checksum: 93a19bae089007236813e2ee95f9fdf342b8abc76a3c39ef2fd08f2bdbe2801bfb3473c7c1812253aad04fd2bda198b5e77bf24b4fb525d72b0003ee15fb4d42
-  languageName: node
-  linkType: hard
-
-"vitest@npm:0.17.0":
-  version: 0.17.0
-  resolution: "vitest@npm:0.17.0"
+"vitest@npm:0.16.0":
+  version: 0.16.0
+  resolution: "vitest@npm:0.16.0"
   dependencies:
     "@types/chai": ^4.3.1
     "@types/chai-subset": ^1.3.3
@@ -3997,16 +3965,13 @@ __metadata:
     local-pkg: ^0.4.1
     tinypool: ^0.2.1
     tinyspy: ^0.3.3
-    vite: ^2.9.12 || ^3.0.0-0
+    vite: ^2.9.12
   peerDependencies:
-    "@edge-runtime/vm": "*"
     "@vitest/ui": "*"
     c8: "*"
     happy-dom: "*"
     jsdom: "*"
   peerDependenciesMeta:
-    "@edge-runtime/vm":
-      optional: true
     "@vitest/ui":
       optional: true
     c8:
@@ -4017,7 +3982,7 @@ __metadata:
       optional: true
   bin:
     vitest: vitest.mjs
-  checksum: 1f664f82551f876a2b2b30deba0f9d6d8f7e4d70cbe96debca1a810d1c8a5b68b8a446495d37c14e5e9e21d7bde13e96a6eef7c8e7c77c502e0058f59be192b4
+  checksum: 501424cd65b8090306f8758600bed367da3a28dfbd693f17ad36d700b6c90065264d50740c545d86682981d150c805f08cbeab7ea31ca2fa847cdebdc544ec24
   languageName: node
   linkType: hard
 
