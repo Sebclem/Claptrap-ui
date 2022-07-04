@@ -38,7 +38,7 @@
                 <v-row>
                   <v-col>
                     <h3 class="text-secondary">About me</h3>
-                    <p class="text-secondary">Claptrap bot a your service !</p>
+                    <p class="text-secondary">Claptrap bot at your service !</p>
                     <p class="text-secondary">
                       Setup
                       <v-icon>mdi-arrow-right</v-icon>
