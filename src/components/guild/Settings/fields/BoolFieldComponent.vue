@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import type { FieldDescriptor } from "@/data/Setting/SettingDescription";
 import { useSettingStore } from "@/stores/setting";
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
 import { storeToRefs } from "pinia";
 defineProps<{ fieldDescription: FieldDescriptor }>();
 

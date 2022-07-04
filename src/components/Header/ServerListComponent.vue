@@ -59,7 +59,7 @@ const router = useRouter();
 const mutualGuildsStore = useMutualGuildsStore();
 const { guilds, loaded } = storeToRefs(mutualGuildsStore);
 onBeforeMount(async () => {
-  let inviteLink = await getInviteLink();
+  const inviteLink = await getInviteLink();
   inviteLinkStore.inviteLink = inviteLink.link;
 });
 

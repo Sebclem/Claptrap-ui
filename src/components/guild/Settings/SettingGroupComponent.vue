@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-card-title>{{ props.descriptor.name }}</v-card-title>
-      <v-card-content class="pt-1">
+      <v-card-text class="pt-1">
         <v-container class="pt-0">
           <v-row v-if="props.descriptor.mainField">
             <v-col>
@@ -33,7 +33,7 @@
             </v-row>
           </template>
         </v-container>
-      </v-card-content>
+      </v-card-text>
     </v-card>
   </div>
 </template>
