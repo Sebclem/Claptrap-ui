@@ -9,6 +9,7 @@ const darkTheme = {
   dark: true,
   colors: {
     primary: "#FFC107",
+    secondary: "#BDBDBD",
   },
 };
 

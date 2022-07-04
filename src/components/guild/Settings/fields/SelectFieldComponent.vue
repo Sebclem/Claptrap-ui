@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import type { FieldDescriptor } from "@/data/Setting/SettingDescription";
 import { useSettingStore } from "@/stores/setting";
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
 import { storeToRefs } from "pinia";
 const props = defineProps<{
   fieldDescription: FieldDescriptor;
@@ -54,6 +54,7 @@ const items = computed(() => {
   if (props.fieldDescription.type == "ROLE") {
     return roles;
   }
+  return undefined;
 });
 </script>
 

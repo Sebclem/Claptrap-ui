@@ -159,8 +159,13 @@
                 v-bind="props"
               ></v-btn>
             </template>
-            <v-card min-width="300" class="rounded-lg">
-              <v-card-content>
+            <v-card
+              min-width="300"
+              class="rounded-lg"
+              variant="outlined"
+              color="primary"
+            >
+              <v-card-text>
                 <v-container>
                   <v-form @submit.prevent="add">
                     <v-text-field
@@ -170,6 +175,7 @@
                       label="Url"
                       hide-details="auto"
                       color="primary"
+                      class="text-primary"
                       autofocus
                       :loading="urlLoading"
                       :disabled="urlLoading"
@@ -187,7 +193,7 @@
                     </v-text-field>
                   </v-form>
                 </v-container>
-              </v-card-content>
+              </v-card-text>
             </v-card>
           </v-menu>
         </v-col>
