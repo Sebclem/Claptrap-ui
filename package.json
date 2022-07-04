@@ -60,6 +60,6 @@
   },
   "lint-staged": {
     "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "eslint --cache --fix",
-    "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,css,scss,md}": "prettier --write"
+    "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,css,scss,md,yml,yaml,json}": "prettier --write"
   }
 }
