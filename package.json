@@ -25,7 +25,6 @@
     "roboto-fontface": "*",
     "uuid": "8.3.2",
     "vue": "3.2.37",
-    "vue-matomo": "^4.1.0",
     "vue-router": "4.0.16",
     "vuetify": "3.0.0-beta.5",
     "webfontloader": "1.6.28"
