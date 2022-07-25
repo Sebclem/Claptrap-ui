@@ -995,6 +995,7 @@ __metadata:
     vitest: 0.16.0
     vue: 3.2.37
     vue-cli-plugin-vuetify: 2.5.1
+    vue-matomo: ^4.1.0
     vue-router: 4.0.16
     vue-tsc: 0.38.2
     vuetify: 3.0.0-beta.5
@@ -4034,6 +4035,13 @@ __metadata:
   peerDependencies:
     eslint: ">=6.0.0"
   checksum: 61248eb504b8d0cbc95ed3f7ec6b11b72782cd76e4049798626f9c09031d620691a967231985c79d8ece8b04864797e465b7f47bcf91828e18344ae3691d9066
+  languageName: node
+  linkType: hard
+
+"vue-matomo@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "vue-matomo@npm:4.1.0"
+  checksum: aa61926ff56b17b7adb88791b1d945b8acad68b89f06641f83c2b263b73aec2d55de0889fbe625fe8ef2bef46b52f6a48296ebbc00f4e6934293be3fee9a9a97
   languageName: node
   linkType: hard
 
