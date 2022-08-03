@@ -450,6 +450,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/devtools-api@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "@vue/devtools-api@npm:6.2.1"
+  checksum: 34765af0be9b0cc7e3def73b2792b1514e3c348852c5a7503fe07d013f0e907af6c27c0a32c0637dd748caf37c075af8e53ca3220433e0bd34b6f3405f358272
+  languageName: node
+  linkType: hard
+
 "@vue/eslint-config-prettier@npm:7.0.0":
   version: 7.0.0
   resolution: "@vue/eslint-config-prettier@npm:7.0.0"
@@ -981,7 +988,7 @@ __metadata:
     js-cookie: 3.0.1
     jsdom: 20.0.0
     lint-staged: 13.0.3
-    pinia: 2.0.14
+    pinia: 2.0.17
     pinia-plugin-persistedstate: 1.6.3
     pinst: 3.0.0
     prettier: 2.7.1
@@ -3293,11 +3300,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia@npm:2.0.14":
-  version: 2.0.14
-  resolution: "pinia@npm:2.0.14"
+"pinia@npm:2.0.17":
+  version: 2.0.17
+  resolution: "pinia@npm:2.0.17"
   dependencies:
-    "@vue/devtools-api": ^6.1.4
+    "@vue/devtools-api": ^6.2.1
     vue-demi: "*"
   peerDependencies:
     "@vue/composition-api": ^1.4.0
@@ -3308,7 +3315,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: d07ed55b53e92da0971c3fcc0a1bd520b26cd50d266f46c8bab24fed87788461782a2c75088cf97c79810e7a4ceb28381f5d77daf280883ad3340c41962d0934
+  checksum: d308c6358570242b6c8126d990d756a224d1a77dfa375db5069da7f1c350372bf4e07feb4efce0d924dfc1b39f39d533234cdecf3594c4a2876de30477f6f978
   languageName: node
   linkType: hard
 
