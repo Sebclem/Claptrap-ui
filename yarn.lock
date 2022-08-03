@@ -576,6 +576,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vuetify/loader-shared@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "@vuetify/loader-shared@npm:1.5.1"
+  dependencies:
+    find-cache-dir: ^3.3.2
+    upath: ^2.0.1
+  peerDependencies:
+    vue: ^3.0.0
+    vuetify: ^3.0.0-beta.4
+  checksum: 7016c66e7faeb62921b678df1de25967761e7ebee5aec5dcc82da003c908fbd5f4d130041cce2d84aec065c197ad7997fb4f5aa6af6e575770e5faf6ad6409d0
+  languageName: node
+  linkType: hard
+
 "abab@npm:^2.0.6":
   version: 2.0.6
   resolution: "abab@npm:2.0.6"
@@ -991,7 +1004,7 @@ __metadata:
     typescript: 4.7.4
     uuid: 8.3.2
     vite: 2.9.13
-    vite-plugin-vuetify: 1.0.0-alpha.12
+    vite-plugin-vuetify: 1.0.0-alpha.14
     vitest: 0.20.3
     vue: 3.2.37
     vue-cli-plugin-vuetify: 2.5.1
@@ -4136,16 +4149,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-vuetify@npm:1.0.0-alpha.12":
-  version: 1.0.0-alpha.12
-  resolution: "vite-plugin-vuetify@npm:1.0.0-alpha.12"
+"vite-plugin-vuetify@npm:1.0.0-alpha.14":
+  version: 1.0.0-alpha.14
+  resolution: "vite-plugin-vuetify@npm:1.0.0-alpha.14"
   dependencies:
-    "@vuetify/loader-shared": ^1.5.0
+    "@vuetify/loader-shared": ^1.5.1
     debug: ^4.3.3
+    upath: ^2.0.1
   peerDependencies:
-    vite: ^2.7.0
+    vite: ^2.7.0 || ^3.0.0
     vuetify: ^3.0.0-beta.4
-  checksum: 515d6146763e73f33fa5bbcb6a13e884392e93cd7c381171b4b28b18fe910c9392c1aa8ed442bc43e594b9976811095ad596564af99c29009eff46875acd2cd9
+  checksum: 466f58198e00a0cea2fd3becd3cb4aa7b7111d9399995b0219521fc52346fd106eb8ce9098cc3bf16dffc28e0909ad0d8cab8a1c57399c8cf2d8f79014f9d19b
   languageName: node
   linkType: hard
 
