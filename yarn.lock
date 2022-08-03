@@ -171,14 +171,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:16.2.15":
-  version: 16.2.15
-  resolution: "@types/jsdom@npm:16.2.15"
+"@types/jsdom@npm:20.0.0":
+  version: 20.0.0
+  resolution: "@types/jsdom@npm:20.0.0"
   dependencies:
     "@types/node": "*"
-    "@types/parse5": ^6.0.3
     "@types/tough-cookie": "*"
-  checksum: e038335321bef42ebf220aaf597e186e2eec8de6107ce7a70de1c046a84c1fbb42d454e195a20383a6870b18c7ef6fa6b73812a626f88a4a2ef1f711d2e2e13c
+    parse5: ^7.0.0
+  checksum: 13e67d31347e02d46ec6a23919b3ce39d86136665922a2a6cb977e216a2f46c22d2f025d0586a64ab492ebaa5f43da669b6f173a5a8cfd3e3bb7c9d19b6cfa9e
   languageName: node
   linkType: hard
 
@@ -200,13 +200,6 @@ __metadata:
   version: 16.11.47
   resolution: "@types/node@npm:16.11.47"
   checksum: 26811000753fd1bb9a90a563fc72942ac3ad5d5b6c97609a090c1e24210e040597ba060e55a7a46cb22cc84dafee112d741f45652139c6166e8ce0c970b4f05a
-  languageName: node
-  linkType: hard
-
-"@types/parse5@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "@types/parse5@npm:6.0.3"
-  checksum: ddb59ee4144af5dfcc508a8dcf32f37879d11e12559561e65788756b95b33e6f03ea027d88e1f5408f9b7bfb656bf630ace31a2169edf44151daaf8dd58df1b7
   languageName: node
   linkType: hard
 
@@ -575,18 +568,6 @@ __metadata:
     "@types/node":
       optional: true
   checksum: 8150a24497a5348bc342c27afb38ad989de2ce8e94c349020628065d2a8df6837cb8bb3012f9161eea716487832612ac71b5f910d95bac41539ac6021d6bd88d
-  languageName: node
-  linkType: hard
-
-"@vuetify/loader-shared@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@vuetify/loader-shared@npm:1.5.0"
-  dependencies:
-    find-cache-dir: ^3.3.2
-    upath: ^2.0.1
-  peerDependencies:
-    vuetify: ^3.0.0-beta.4
-  checksum: 791abd0df9f6bef5c3eb1cdd8f958dd14ce3ad013ea32ec0c98a6278863363bab80040bcb06ff75494abb15a3177ea013b09b31d8a1c9173873789745424cb51
   languageName: node
   linkType: hard
 
@@ -1000,7 +981,7 @@ __metadata:
     "@mdi/font": 6.9.96
     "@rushstack/eslint-patch": 1.1.4
     "@types/js-cookie": 3.0.2
-    "@types/jsdom": 16.2.15
+    "@types/jsdom": 20.0.0
     "@types/node": 16.11.47
     "@types/uuid": 8.3.4
     "@types/webfontloader": 1.6.34
