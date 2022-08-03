@@ -14,7 +14,7 @@
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "@mdi/font": "6.9.96",
+    "@mdi/font": "7.0.96",
     "@types/js-cookie": "3.0.2",
     "@types/uuid": "8.3.4",
     "axios": "0.27.2",
