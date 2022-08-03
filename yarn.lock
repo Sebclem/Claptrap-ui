@@ -578,18 +578,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuetify/loader-shared@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@vuetify/loader-shared@npm:1.5.0"
-  dependencies:
-    find-cache-dir: ^3.3.2
-    upath: ^2.0.1
-  peerDependencies:
-    vuetify: ^3.0.0-beta.4
-  checksum: 791abd0df9f6bef5c3eb1cdd8f958dd14ce3ad013ea32ec0c98a6278863363bab80040bcb06ff75494abb15a3177ea013b09b31d8a1c9173873789745424cb51
-  languageName: node
-  linkType: hard
-
 "@vuetify/loader-shared@npm:^1.5.1":
   version: 1.5.1
   resolution: "@vuetify/loader-shared@npm:1.5.1"
@@ -1018,7 +1006,7 @@ __metadata:
     jsdom: 20.0.0
     lint-staged: 13.0.3
     pinia: 2.0.17
-    pinia-plugin-persistedstate: 1.6.3
+    pinia-plugin-persistedstate: 2.1.0
     pinst: 3.0.0
     prettier: 2.7.1
     roboto-fontface: "*"
@@ -3379,12 +3367,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia-plugin-persistedstate@npm:1.6.3":
-  version: 1.6.3
-  resolution: "pinia-plugin-persistedstate@npm:1.6.3"
+"pinia-plugin-persistedstate@npm:2.1.0":
+  version: 2.1.0
+  resolution: "pinia-plugin-persistedstate@npm:2.1.0"
   peerDependencies:
     pinia: ^2.0.0
-  checksum: aab466de97d72a303a5b2ce8fa7f8337515dc5d57af6f76d5aa3ad8fd702ce2b7f14a0e6b0d87e6d333969126f264cdb3ebc73660100e9108ef8c2e224e43031
+  peerDependenciesMeta:
+    pinia:
+      optional: true
+  checksum: f2faec43712f3914157723380174f61981b27f87b57df3dc2ca369c4be9d3e9652e4b1763f6b0bf21d3dffe8ea615057cc4ebd745ba959ab9963075789629d51
   languageName: node
   linkType: hard
 
