@@ -54,7 +54,7 @@
     "vitest": "0.20.3",
     "vue-cli-plugin-vuetify": "2.5.1",
     "vue-tsc": "0.38.2",
-    "webpack-plugin-vuetify": "2.0.0-alpha.11"
+    "webpack-plugin-vuetify": "2.0.0-alpha.12"
   },
   "lint-staged": {
     "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "eslint --cache --fix",
