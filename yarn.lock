@@ -341,13 +341,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:2.3.3":
-  version: 2.3.3
-  resolution: "@vitejs/plugin-vue@npm:2.3.3"
+"@vitejs/plugin-vue@npm:3.2.0":
+  version: 3.2.0
+  resolution: "@vitejs/plugin-vue@npm:3.2.0"
   peerDependencies:
-    vite: ^2.5.10
+    vite: ^3.0.0
     vue: ^3.2.25
-  checksum: 9303dcb9c8580d0ee9b33542639ac1a36ad9cc0e773a1f9b9b05623d74574f6a901ce781918b53f5a58eb3c6218ba96c27ef6efbf3e7ef6be16864fc1cae1626
+  checksum: 64774f770e0e21ce7eb36743d614e3f197a35f5b67b2d3800c61766e649f43dc497bb037738ffafd607eb488064ab132c23766190e7ab557a0b88c0051f7a794
   languageName: node
   linkType: hard
 
@@ -1005,7 +1005,7 @@ __metadata:
     "@types/node": 16.11.47
     "@types/uuid": 8.3.4
     "@types/webfontloader": 1.6.34
-    "@vitejs/plugin-vue": 2.3.3
+    "@vitejs/plugin-vue": 3.2.0
     "@vue/eslint-config-prettier": 7.0.0
     "@vue/eslint-config-typescript": 11.0.0
     "@vue/test-utils": 2.0.2
