@@ -1023,7 +1023,7 @@ __metadata:
     pinst: 3.0.0
     prettier: 2.7.1
     roboto-fontface: "*"
-    sass: 1.54.1
+    sass: 1.69.5
     sass-loader: 13.0.2
     typescript: 4.7.4
     uuid: 8.3.2
@@ -3723,16 +3723,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:1.54.1":
-  version: 1.54.1
-  resolution: "sass@npm:1.54.1"
+"sass@npm:1.69.5":
+  version: 1.69.5
+  resolution: "sass@npm:1.69.5"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 6ab68b39006db7b015ee710e820c254890a8b503f83516db983896967b965f8114a497615f949a1665634dea11bd9f02c19fc2093d3561515f7c16022c9ab5b5
+  checksum: c66f4f02882e7aa7aa49703824dadbb5a174dcd05e3cd96f17f73687889aab6027d078b518e2c04b594dfd89b2f574824bf935c7aee46c770aa6be9aafcc49f2
   languageName: node
   linkType: hard
 
