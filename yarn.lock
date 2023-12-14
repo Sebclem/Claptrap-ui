@@ -690,6 +690,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vuetify/loader-shared@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "@vuetify/loader-shared@npm:1.7.1"
+  dependencies:
+    find-cache-dir: ^3.3.2
+    upath: ^2.0.1
+  peerDependencies:
+    vue: ^3.0.0
+    vuetify: ^3.0.0-beta.4
+  checksum: 5777955e593afbb947c8be28a8625021846901e16ab982edfbbb74d9beb15f95490390ab1b0c6ec47e8b05389547eb69c79173cca04389f0203795071bb04994
+  languageName: node
+  linkType: hard
+
 "abab@npm:^2.0.6":
   version: 2.0.6
   resolution: "abab@npm:2.0.6"
@@ -1122,7 +1135,7 @@ __metadata:
     vue-tsc: 0.40.13
     vuetify: 3.4.7
     webfontloader: 1.6.28
-    webpack-plugin-vuetify: 2.0.0-alpha.12
+    webpack-plugin-vuetify: 2.0.1
   languageName: unknown
   linkType: soft
 
@@ -4578,22 +4591,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-plugin-vuetify@npm:2.0.0-alpha.12":
-  version: 2.0.0-alpha.12
-  resolution: "webpack-plugin-vuetify@npm:2.0.0-alpha.12"
+"webpack-plugin-vuetify@npm:2.0.1":
+  version: 2.0.1
+  resolution: "webpack-plugin-vuetify@npm:2.0.1"
   dependencies:
-    "@vuetify/loader-shared": ^1.5.1
+    "@vuetify/loader-shared": ^1.7.1
     decache: ^4.6.0
     file-loader: ^6.2.0
     find-cache-dir: ^3.3.2
     loader-utils: ^2.0.0
+    mkdirp: ^1.0.4
     null-loader: ^4.0.1
     upath: ^2.0.1
   peerDependencies:
     "@vue/compiler-sfc": ^3.2.6
     vuetify: ^3.0.0-beta.4
     webpack: ^5.0.0
-  checksum: f6367b705381de3e0004b9324d29974f05c5af1b8b6f0b773532fa39f5eb3f0216211eb5a0788e4d86e069e5299198891210a3661355c06a684a0d89a4501d55
+  checksum: 848574708b1477bc5b7fe717dd6521e7c680ed6e331233896f703ab06f69a109acf3082566383e0311f887b10e5f146b031cd34314e1bd9d1075f02c8cef90b9
   languageName: node
   linkType: hard
 
