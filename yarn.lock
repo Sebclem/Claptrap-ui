@@ -1117,7 +1117,7 @@ __metadata:
     vite-plugin-vuetify: 1.0.0-alpha.14
     vitest: 0.20.3
     vue: 3.2.37
-    vue-cli-plugin-vuetify: 2.5.1
+    vue-cli-plugin-vuetify: 2.5.8
     vue-router: 4.1.3
     vue-tsc: 0.40.13
     vuetify: 3.4.7
@@ -4435,9 +4435,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-cli-plugin-vuetify@npm:2.5.1":
-  version: 2.5.1
-  resolution: "vue-cli-plugin-vuetify@npm:2.5.1"
+"vue-cli-plugin-vuetify@npm:2.5.8":
+  version: 2.5.8
+  resolution: "vue-cli-plugin-vuetify@npm:2.5.8"
   dependencies:
     null-loader: ^4.0.1
     semver: ^7.1.2
@@ -4449,7 +4449,7 @@ __metadata:
       optional: true
     vuetify-loader:
       optional: true
-  checksum: 55035cc1c911669c35f362c2ce511ba2ea6a7e085b689254e49fa4eeb320510ab7c5139ea5308b01ef245dc7230c5b28fc7c7f64a7a471841079fca4bcb5b463
+  checksum: d71654fb4ab0518a6bebb39c1de266f2d4e5a113bad60652369d8187d8f9fc7570dc2e616366d82b9965bb10bd856ea131d712ef16e13a13007141a0bada2a56
   languageName: node
   linkType: hard
 
