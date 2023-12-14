@@ -24,7 +24,7 @@ jobs:
 
       - name: 🛠️ Get branch name
         id: branch-name
-        uses: tj-actions/branch-names@v5.4
+        uses: tj-actions/branch-names@v6.5
 
       - name: 🛠️ Set tag
         run: |
