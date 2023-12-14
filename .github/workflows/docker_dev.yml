@@ -33,7 +33,7 @@ jobs:
           echo "tag=${{ steps.branch-name.outputs.current_branch }}" >> $GITHUB_ENV
 
       - name: 🔨 Build and push Docker
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           push: true
           context: .
