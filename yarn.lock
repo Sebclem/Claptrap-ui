@@ -164,10 +164,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-cookie@npm:3.0.2":
-  version: 3.0.2
-  resolution: "@types/js-cookie@npm:3.0.2"
-  checksum: 7ab964288dd26373e134ed0bcde4a7dbea7e6f5de1805e2d1e48eac847e89a0e7f5fdc9164c37931680ec97c6e6e5a73e3e4039e0d08527c2e21badd7bee62d1
+"@types/js-cookie@npm:3.0.6":
+  version: 3.0.6
+  resolution: "@types/js-cookie@npm:3.0.6"
+  checksum: 272d551687547445cb210213c73e72e0e5d58ad73e2e444a65d688b8ff9425529779ee0cd6492aaa1f070161916d4254ef2b1a76d64179100437f60749d094ef
   languageName: node
   linkType: hard
 
@@ -1086,7 +1086,7 @@ __metadata:
   dependencies:
     "@mdi/font": 7.0.96
     "@rushstack/eslint-patch": 1.1.4
-    "@types/js-cookie": 3.0.2
+    "@types/js-cookie": 3.0.6
     "@types/jsdom": 20.0.0
     "@types/node": 16.18.68
     "@types/uuid": 8.3.4
@@ -1101,7 +1101,7 @@ __metadata:
     eslint-plugin-vue: 9.3.0
     husky: 8.0.1
     jose: 4.8.3
-    js-cookie: 3.0.1
+    js-cookie: 3.0.5
     jsdom: 20.0.0
     lint-staged: 13.0.3
     pinia: 2.1.7
@@ -2692,10 +2692,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-cookie@npm:3.0.1":
-  version: 3.0.1
-  resolution: "js-cookie@npm:3.0.1"
-  checksum: bb48de67e2a6bd1ae3dfd6b2d5a167c33dd0c5a37e909206161eb0358c98f17cb55acd55827a58e9eea3630d89444e7479f7938ef4420dda443218b8c434a4c3
+"js-cookie@npm:3.0.5":
+  version: 3.0.5
+  resolution: "js-cookie@npm:3.0.5"
+  checksum: 2dbd2809c6180fbcf060c6957cb82dbb47edae0ead6bd71cbeedf448aa6b6923115003b995f7d3e3077bfe2cb76295ea6b584eb7196cca8ba0a09f389f64967a
   languageName: node
   linkType: hard
 
