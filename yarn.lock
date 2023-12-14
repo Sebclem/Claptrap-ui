@@ -1105,7 +1105,7 @@ __metadata:
     jsdom: 20.0.0
     lint-staged: 13.0.3
     pinia: 2.0.17
-    pinia-plugin-persistedstate: 2.1.0
+    pinia-plugin-persistedstate: 2.4.0
     pinst: 3.0.0
     prettier: 2.7.1
     roboto-fontface: "*"
@@ -3466,15 +3466,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia-plugin-persistedstate@npm:2.1.0":
-  version: 2.1.0
-  resolution: "pinia-plugin-persistedstate@npm:2.1.0"
+"pinia-plugin-persistedstate@npm:2.4.0":
+  version: 2.4.0
+  resolution: "pinia-plugin-persistedstate@npm:2.4.0"
   peerDependencies:
     pinia: ^2.0.0
   peerDependenciesMeta:
     pinia:
       optional: true
-  checksum: f2faec43712f3914157723380174f61981b27f87b57df3dc2ca369c4be9d3e9652e4b1763f6b0bf21d3dffe8ea615057cc4ebd745ba959ab9963075789629d51
+  checksum: 8b847a4d967ea7e96815084bdf21e993ac0956d2b9093c0ef452287af66379799bc5d05057a256848b1bc254a8e232df8d0e0b19a63eef85ee4cc6aae6e8352d
   languageName: node
   linkType: hard
 

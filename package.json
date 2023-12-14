@@ -21,7 +21,7 @@
     "jose": "4.8.3",
     "js-cookie": "3.0.1",
     "pinia": "2.0.17",
-    "pinia-plugin-persistedstate": "2.1.0",
+    "pinia-plugin-persistedstate": "2.4.0",
     "roboto-fontface": "*",
     "uuid": "8.3.2",
     "vue": "3.2.37",
