@@ -48,7 +48,11 @@
                 </v-row>
                 <v-row>
                   <v-col>
-                    <v-btn :href="inviteLinkStore.inviteLink" color="primary">
+                    <v-btn
+                      :href="inviteLinkStore.inviteLink"
+                      color="primary"
+                      block
+                    >
                       Invite me !
                     </v-btn>
                   </v-col>
@@ -68,6 +72,7 @@
               to="/oauth2/redirect"
               prepend-icon="mdi-discord"
               color="primary"
+              block
             >
               Login with Discord
             </v-btn>
@@ -91,7 +96,7 @@
                       </v-avatar>
                     </v-col>
                     <v-col class="px-0 py-2" cols="10" sm="1" md="10" xl="11">
-                      <v-row justify="left">
+                      <v-row justify="start">
                         <v-col class="d-flex align-center">
                           <p class="text-primary">Claptrap Bot</p>
                           <span class="text-disabled text-caption ml-2">
@@ -99,7 +104,7 @@
                           </span>
                         </v-col>
                       </v-row>
-                      <v-row justify="left" class="mb-2">
+                      <v-row justify="start" class="mb-2">
                         <v-col
                           class="d-flex flex-column justify-start text-start pt-0 text-body-2 pb-0"
                           cols="12"

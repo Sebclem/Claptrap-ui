@@ -12,19 +12,20 @@
           :data-guild-id="guild.id"
           @click="clickOnGuild(guild.id)"
         >
-          <v-list-item-avatar
-            start
-            :color="guild.iconUrl ? '' : 'grey-darken-3'"
-          >
-            <v-img v-if="guild.iconUrl" :src="guild.iconUrl"></v-img>
-            <template v-if="!guild.iconUrl">{{ guild.name[1] }}</template>
-          </v-list-item-avatar>
+          <template v-slot:prepend>
+            <v-avatar start :color="guild.iconUrl ? '' : 'grey-darken-3'">
+              <v-img v-if="guild.iconUrl" :src="guild.iconUrl"></v-img>
+              <template v-if="!guild.iconUrl">{{ guild.name[1] }}</template>
+            </v-avatar>
+          </template>
           <v-list-item-title>{{ guild.name }}</v-list-item-title>
         </v-list-item>
         <v-list-item :href="inviteLink" target="_blank">
-          <v-list-item-avatar color="grey-darken-3" start>
-            <v-icon color="green">mdi-plus</v-icon>
-          </v-list-item-avatar>
+          <template v-slot:prepend>
+            <v-avatar color="grey-darken-3" start>
+              <v-icon color="green">mdi-plus</v-icon>
+            </v-avatar>
+          </template>
           <v-list-item-title> Invite Claptrap Bot ! </v-list-item-title>
         </v-list-item>
       </template>
@@ -86,7 +87,7 @@ function loadMutualGuilds() {
     mutualGuildsStore.loaded = true;
     if (
       !mutualGuildsStore.getGuild(
-        router.currentRoute.value.params?.guildId as string
+        router.currentRoute.value.params?.guildId as string,
       )
     ) {
       router.push("/");

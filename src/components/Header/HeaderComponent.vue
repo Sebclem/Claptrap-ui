@@ -38,13 +38,13 @@
         :subtitle="'#' + discriminator"
       >
         <template v-slot:append>
-          <v-list-item-avatar end>
+          <v-avatar>
             <v-btn
               icon="mdi-exit-to-app"
               class="text-high-emphasis text-white"
               v-on:click="logoutAndRedirect()"
             ></v-btn>
-          </v-list-item-avatar>
+          </v-avatar>
         </template>
       </v-list-item>
     </v-list>
