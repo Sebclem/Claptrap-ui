@@ -2,15 +2,12 @@ FROM node:16 AS builder
 
 WORKDIR /app
 
-COPY package.json .
-COPY yarn.lock .
-COPY .yarn/releases/* .yarn/releases/
-COPY .yarnrc.yml .
-RUN yarn install
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
 
 COPY . .
 
-RUN yarn build
+RUN pnpm build
 
 # nginx state for serving content
 FROM nginx:alpine
